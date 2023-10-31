@@ -1,8 +1,11 @@
-# React + Vite
+# Base Backoffice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Vite + React + MUI
 
-Currently, two official plugins are available:
+<img width="1876" alt="Screenshot 2023-10-31 at 14 03 47" src="https://github.com/emanuelcardozo/base_backoffice/assets/51089891/47eef970-aec5-4ab7-8415-d7526c6d7590">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Steps:
+`` cp .env.example .env ``
+
+Run project with:
+`` npm run dev ``
