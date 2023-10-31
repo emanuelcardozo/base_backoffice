@@ -1,0 +1,159 @@
+{
+  "features": {
+    "Auth": {
+      "signIn": "Sign in",
+      "forgotPassword": "Forgot password",
+      "resetPassword": "Reset password",
+      "fields": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter your email",
+          "validationEmail": "Must be a valid email",
+          "validationRequired": "Email is required"
+        },
+        "code": {
+          "label": "Verification Code",
+          "validationLength": "Must be {{length}} digits",
+          "validationRequired": "Code is required"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "validationRequired": "Password is required",
+          "validationMatch": "Passwords must be equal"
+        },
+        "passwordConfirm": {
+          "label": "Confirm your password",
+          "placeholder": "Confirm your password"
+        }
+      },
+      "buttons": {
+        "continue": "Continue",
+        "continueLoading": "Loading...",
+        "sendCodeToEmail": "Send code to email",
+        "didYouNotReceiveTheCode": "Did you not receive the code?",
+        "forgotPassword": "Forgot password?"
+      }
+    }
+  },
+  "accountPopover": {
+    "account": "Account",
+    "signOut": "Sign out"
+  },
+  "menu": {
+    "operations": "Operations",
+    "dashboard": "Dashboard",
+    "customers": "Customers",
+    "transactions": "Transactions",
+    "discounts": "Discounts",
+    "publications": "Publications",
+    "stores": "Stores",
+    "system": "System",
+    "categories": "Categories",
+    "admin": "Admin"
+  },
+  "errors": {
+    "401": {
+      "title": "401: Authorization required",
+      "description": "Oops! It seems you've encountered an access barrier. Make sure you're authenticated correctly to access this area.",
+      "goBackButton": "Go back to dashboard"
+    },
+    "404": {
+      "title": "404: The page you are looking for isn’t here",
+      "description": "You've attempted to access an incorrect route or arrived here by mistake. Whatever the case, try using the navigation.",
+      "goBackButton": "Go back to dashboard"
+    },
+    "500": {
+      "title": "500: Internal Server Error",
+      "description": "Oh no! Our servers seem to be having a rough day. Don't worry, we're busy resolving this technical issue.",
+      "goBackButton": "Go back to dashboard"
+    }
+  },
+  "validations": {
+    "required": "This field is required.",
+    "string": "This field should be an alphanumeric text.",
+    "number": "This field should be a number.",
+    "stringOrNumber": "This field should be a text or number.",
+    "formatEmail": "This field should be a valid email.",
+    "passwordMatch": "The password must be equals.",
+    "charExceded": "This field should be less than {{maxChars}} characters.",
+    "file-invalid-type": "This selected file type is not allowed."
+  },
+  "fields": {
+    "name": "Name"
+  },
+  "common": {
+    "genericError": "An error has occurred",
+    "top_nav": {
+      "change_language": "Change Language"
+    },
+    "filters": {
+      "title": "Filtros",
+      "clear": "Limpiar"
+    },
+    "coupon": {
+      "date": "{{dateFrom}} to {{dateTo}}"
+    },
+    "noResults": "There are no results",
+    "new": "New",
+    "import": "Import",
+    "export": "Export",
+    "actions": "Actions",
+    "retry": "Retry",
+    "edit": "Edit",
+    "validate": "Validate",
+    "hide": "Deactivate",
+    "unhide": "Activate",
+    "view": "View details",
+    "delete": "Delete",
+    "qr": "Download QR",
+    "Yes": "Yes",
+    "No": "No",
+    "cancel": "Cancel",
+    "apply": "Apply",
+    "_toDate": "{{val, datetime}}",
+    "_toDateRange": "{{dateFrom, datetime}} - {{dateTo, datetime}}",
+    "_toList": "{{val, list}}",
+    "createdSuccessfully": "New {{type, lowercase}} \"{{name}}\" created successfully!",
+    "editedSuccessfully": "The {{type, lowercase}} \"{{name}}\" has been edited successfully!",
+    "filters_zero": "Filters",
+    "filters_one": "Filters ({{count}})",
+    "filters_other": "Filters ({{count}})",
+    "shortWeekdays": {
+      "monday": "Mon",
+      "tuesday": "Tues",
+      "wednesday": "Wed",
+      "thursday": "Thurs",
+      "friday": "Fri",
+      "saturday": "Sat",
+      "sunday": "Sun"
+    },
+    "weekdays": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "publish": "Publish",
+    "unpublish": "Unpublish",
+    "highlight": "Highlight",
+    "notHighlight": "Not highlight",
+    "news": "News",
+    "promotion": "Promotion",
+    "event": "Event"
+  },
+  "authLayout": {
+    "welcome": "Welcome to ",
+    "projectName": "Base Backoffice",
+    "description": ""
+  },
+  "dropzone": {
+    "click": "Click to upload",
+    "orDrop": " or drag and drop",
+    "extensions": "({{extensions, list}})",
+    "recommendedSize": "Recommended size: {{width}}x{{height}}px"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "features": {
+    "Auth": {
+      "signIn": "Iniciar sesión",
+      "forgotPassword": "Olvidé mi contraseña",
+      "resetPassword": "Cambiar contraseña",
+      "fields": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Ingresa tu email",
+          "validationEmail": "Debe ser un email válido",
+          "validationRequired": "El email es requerido"
+        },
+        "code": {
+          "label": "Código de verificación",
+          "validationLength": "Debe ser un código de {{length}} dígitos",
+          "validationRequired": "El código es requerido"
+        },
+        "password": {
+          "label": "Contraseña",
+          "placeholder": "Ingresa tu contraseña",
+          "validationRequired": "La contraseña es requerida",
+          "validationMatch": "Las contraseñas deben ser iguales"
+        },
+        "passwordConfirm": {
+          "label": "Confirma tu contraseña",
+          "placeholder": "Confirma tu contraseña"
+        }
+      },
+      "buttons": {
+        "continue": "Continuar",
+        "continueLoading": "Cargando...",
+        "sendCodeToEmail": "Enviar código al email",
+        "didYouNotReceiveTheCode": "No recibí el código de verificación",
+        "forgotPassword": "Olvidé mi contraseña"
+      }
+    }
+  },
+  "accountPopover": {
+    "account": "Cuenta",
+    "signOut": "Cerrar sesión"
+  },
+  "menu": {
+    "operations": "Operaciones",
+    "dashboard": "Dashboard",
+    "customers": "Clientes",
+    "transactions": "Transacciones",
+    "discounts": "Descuentos",
+    "publications": "Publicaciones",
+    "stores": "Locales",
+    "system": "Sistema",
+    "categories": "Categorías",
+    "admin": "Administrador"
+  },
+  "errors": {
+    "401": {
+      "title": "401: Autorización requerida",
+      "description": "¡Oops! Parece que te has topado con un muro de acceso. Asegúrate de estar autenticado correctamente para acceder a esta área.",
+      "goBackButton": "Volver al Dashboard"
+    },
+    "404": {
+      "title": "404: La página que estás buscando no existe.",
+      "description": "Has intentado acceder a una ruta incorrecta o viniste aquí por error. Sea lo que sea, intenta usar la navegación.",
+      "goBackButton": "Volver al Dashboard"
+    },
+    "500": {
+      "title": "500: Error en el Servidor",
+      "description": "¡Vaya! Nuestros servidores parecen estar pasando por un mal día. No te preocupes, estamos ocupados resolviendo este problema técnico.",
+      "goBackButton": "Volver al Dashboard"
+    }
+  },
+  "validations": {
+    "required": "Este campo es requerido.",
+    "string": "Este campo debe ser texto alfanumérico.",
+    "number": "Este campo debe ser un número.",
+    "stringOrNumber": "Este campo debe ser un texto o un número.",
+    "formatEmail": "Este campo debe ser un email válido.",
+    "passwordMatch": "Las contraseñas deben ser iguales",
+    "charExceded": "Este campo no puede exceder los {{maxChars}} caracteres.",
+    "file-invalid-type": "El tipo de archivo seleccionado no está permitido."
+  },
+  "fields": {
+    "name": "Nombre"
+  },
+  "common": {
+    "genericError": "Ocurrió un error",
+    "top_nav": {
+      "change_language": "Cambiar Idioma"
+    },
+    "filters": {
+      "title": "Filtros",
+      "clear": "Limpiar"
+    },
+    "coupon": {
+      "date": "{{dateFrom}} hasta {{dateTo}}"
+    },
+    "noResults": "No se encontraron resultados",
+    "new": "Nuevo",
+    "import": "Importar",
+    "export": "Exportar",
+    "actions": "Acciones",
+    "retry": "Reintentar",
+    "edit": "Editar",
+    "hide": "Desactivar",
+    "unhide": "Activar",
+    "view": "Ver detalles",
+    "delete": "Eliminar",
+    "validate": "Validar",
+    "qr": "Descargar QR",
+    "Yes": "Si",
+    "No": "No",
+    "cancel": "Cancelar",
+    "apply": "Aplicar",
+    "_toDate": "{{val, datetime}}",
+    "_toDateRange": "{{dateFrom, datetime}} - {{dateTo, datetime}}",
+    "_toList": "{{val, list}}",
+    "createdSuccessfully": "¡Nuevo {{type, lowercase}} \"{{name}}\" creado exitosamente!",
+    "editedSuccessfully": "¡El {{type, lowercase}} \"{{name}}\" se ha editado exitosamente!",
+    "filters_zero": "Filtros",
+    "filters_one": "Filtros ({{count}})",
+    "filters_other": "Filtros ({{count}})",
+    "shortWeekdays": {
+      "monday": "Lu",
+      "tuesday": "Ma",
+      "wednesday": "Mi",
+      "thursday": "Ju",
+      "friday": "Vi",
+      "saturday": "Sa",
+      "sunday": "Do"
+    },
+    "weekdays": {
+      "monday": "Lunes",
+      "tuesday": "Martes",
+      "wednesday": "Miércoles",
+      "thursday": "Jueves",
+      "friday": "Viernes",
+      "saturday": "Sábado",
+      "sunday": "Domingo"
+    },
+    "publish": "Publicar",
+    "unpublish": "Despublicar",
+    "highlight": "Destacar",
+    "notHighlight": "No destacar",
+    "news": "Novedad",
+    "event": "Evento",
+    "promotion": "Promoción"
+  },
+  "authLayout": {
+    "welcome": "Bienvenido al ",
+    "projectName": "Backoffice Base",
+    "description": ""
+  },
+  "dropzone": {
+    "click": "Click para buscar archivos",
+    "orDrop": " o arrastra y suelta aquí",
+    "extensions": "({{extensions, list}})",
+    "recommendedSize": "Tamaño recomendado: {{width}}x{{height}}px"
+  },
+  "author": "",
+  "config": {},
+  "createAt": "",
+  "homepage": "",
+  "identifier": "",
+  "meta": {},
+  "schemaVersion": 0
+}
