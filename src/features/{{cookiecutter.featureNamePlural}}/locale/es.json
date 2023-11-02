@@ -1,0 +1,53 @@
+{
+  "singular": "Categoría",
+  "listing": {
+    "title": "Categorías"
+  },
+  "details": {
+    "details": "Detalles"
+  },
+  "fields": {
+    "id": "Id",
+    "name": "Nombre",
+    "active": "Activa",
+    "createdAt": "Fecha de alta"
+  },
+  "create": {
+    "title": "Nueva Categoría",
+    "cancelDialog": {
+      "title": "Cancelar creación de categoría",
+      "content": "Estás seguro que deseas cancelar la creación? Todo el progreso se perderá",
+      "confirm": "Continuar editando",
+      "cancel": "Salir"
+    }
+  },
+  "edit": {
+    "title": "Editar Categoría",
+    "cancelDialog": {
+      "title": "Cancelar edición de categoría",
+      "content": "Estás seguro que deseas cancelar la edición? Todo el progreso se perderá",
+      "confirm": "Continuar editando",
+      "cancel": "Salir"
+    }
+  },
+  "filters": {
+    "name": "Nombre",
+    "active": "Activa",
+    "all": "Todos"
+  },
+  "form": {
+    "details": "Detalles básicos",
+    "name": "Nombre",
+    "cancel": "Cancelar",
+    "saveAndNoActivate": "Guardar sin activar",
+    "saveAndActivate": "Guardar y activar"
+  },
+  "dialog": {
+    "title": "{{action}} en p¡p",
+    "content": "¿Confirma que desea {{action, lowercase}} la categoría en p¡p?",
+    "hide": "Desactivar",
+    "unhide": "Activar",
+    "confirm": "Desactivar",
+    "cancel": "Cancelar"
+  }
+}
