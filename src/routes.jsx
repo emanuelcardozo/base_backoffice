@@ -5,6 +5,7 @@ import AuthLayout from 'layouts/AuthLayout'
 
 // routes
 import CategoryRoutes from 'features/Categories/routes'
+import PokemonesRoutes from 'features/Pokemones/routes'
 import ErrorRoutes from 'features/Errors/routes'
 
 import AuthRoutes from './features/Auth/routes'
@@ -20,6 +21,7 @@ const MainRoutes = {
   ),
   children: [
     ...CategoryRoutes,
+    ...PokemonesRoutes,
     // add yours features route here
   ],
 }
