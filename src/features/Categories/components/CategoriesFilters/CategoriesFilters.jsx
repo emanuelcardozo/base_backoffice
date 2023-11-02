@@ -9,6 +9,8 @@ import { useMemo } from 'react'
 import entitiesToOptions from 'utils/entityToOptions.js'
 import Select from 'components/Select'
 
+const emptyValue = { name: t('all'), value: null }
+
 const CategoriesFilters = ({ open, onCancel, onApply, initialFilters }) => {
   const { t } = useTranslation('features', { keyPrefix: 'Categories.filters' })
 
@@ -45,7 +47,7 @@ const CategoriesFilters = ({ open, onCancel, onApply, initialFilters }) => {
         label={t('active')}
         options={entitiesToOptions(ACTIVE_OPTIONS)}
         fullWidth
-        emptyValue={{ name: t('all'), value: null }}
+        emptyValue={emptyValue}
         {...getFieldProps('active')}
       />
     </Filters>

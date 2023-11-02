@@ -7,6 +7,7 @@ import { LoadingButton } from '@mui/lab'
 import { useFormik } from 'formik'
 import CategorySchema from 'features/Categories/schema/CategorySchema'
 
+const direction = { xs: 'column-reverse', sm: 'row' }
 function CategoryForm({ onCancel, onSubmit, initialValues, isSubmitting }) {
   const { t, i18n } = useTranslation(['features'], { keyPrefix: 'Categories.form' })
 
@@ -43,11 +44,7 @@ function CategoryForm({ onCancel, onSubmit, initialValues, isSubmitting }) {
         <CardFormBlock title={t('details')}>
           <TextField fullWidth label={t('name')} {...getFieldProps('name')} />
         </CardFormBlock>
-        <Stack
-          direction={{ xs: 'column-reverse', sm: 'row' }}
-          spacing={3}
-          justifyContent="flex-end"
-        >
+        <Stack direction={direction} spacing={3} justifyContent="flex-end">
           <Button size="large" variant="text" onClick={onCancel}>
             {t('cancel')}
           </Button>

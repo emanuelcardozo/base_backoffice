@@ -43,8 +43,8 @@
     "saveAndActivate": "Guardar y activar"
   },
   "dialog": {
-    "title": "{{action}} en p¡p",
-    "content": "¿Confirma que desea {{action, lowercase}} la categoría en p¡p?",
+    "title": "Acción en Backoffice",
+    "content": "¿Confirma que desea Acción la categoría en p¡p?",
     "hide": "Desactivar",
     "unhide": "Activar",
     "confirm": "Desactivar",

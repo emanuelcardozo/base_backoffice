@@ -43,8 +43,8 @@
     "saveAndActivate": "Save with activation"
   },
   "dialog": {
-    "title": "{{action}} on p¡p",
-    "content": "Are you sure to {{action, lowercase}} this category on p¡p?",
+    "title": "Action on Backoffice",
+    "content": "Are you sure to action this category on p¡p?",
     "hide": "Deactivate",
     "unhide": "Activate",
     "confirm": "Activate",
