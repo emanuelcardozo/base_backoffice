@@ -1,44 +1,28 @@
-import { useCallback, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSnackbar } from 'notistack'
 import useFetch from 'hooks/useFetch'
 import config from 'config'
 import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
-import { useNavigate } from 'react-router-dom'
+import { categoryFromAPI } from '../transformers'
 
-export default function use{{cookiecutter.featureName}}Edition(id) {
-  const { t } = useTranslation()
-  const navigate = useNavigate()
+export default function useFetchCategoryDetail(id) {
+  const [category, setCategory] = useState()
+  const { t } = useTranslation('common')
   const { response, doFetch, loading, error } = useFetch(
-    `${config.api.msCategories.baseUrl}/categories/${id}`,
-    {
-      method: 'PATCH',
-    }
+    `${config.api.msCategories.baseUrl}/categories/${id}`
   )
   const { closeSnackbar, enqueueSnackbar } = useSnackbar()
 
-  const onSubmit = useCallback(
-    (data) => {
-      doFetch({ data })
-    },
-    [doFetch]
-  )
+  useEffect(() => {
+    doFetch()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     if (!response) return
 
-    navigate('/categories')
-
-    const message = t('editedSuccessfully', {
-      name: response.data.name,
-      type: t('features:Categories:singular'),
-    })
-
-    enqueueSnackbar(message, {
-      preventDuplicate: false,
-      variant: 'success',
-    })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setCategory(categoryFromAPI(response.data, t))
   }, [response, t])
 
   useEffect(() => {
@@ -62,5 +46,5 @@ export default function use{{cookiecutter.featureName}}Edition(id) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error, t])
 
-  return { onSubmit, loading }
+  return { category, loading, error }
 }

@@ -6,7 +6,7 @@ import config from 'config'
 import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
 import { useNavigate } from 'react-router-dom'
 
-export default function use{{cookiecutter.featureName}}Edition(id) {
+export default function useTypeEdition(id) {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const { response, doFetch, loading, error } = useFetch(
