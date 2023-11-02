@@ -3,14 +3,16 @@ import { TextField } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useCallback } from 'react'
 import { useFormik } from 'formik'
-import CategoryFilterSchema from 'features/Categories/schema/CategoryFilterSchema'
+import CategoryFilterSchema from 'features/{{cookiecutter.featureNamePlural}}/schema/CategoryFilterSchema'
 import Filters from 'components/Filters/index.js'
 import { useMemo } from 'react'
 import entitiesToOptions from 'utils/entityToOptions.js'
 import Select from 'components/Select'
 
-const CategoriesFilters = ({ open, onCancel, onApply, initialFilters }) => {
-  const { t } = useTranslation('features', { keyPrefix: 'Categories.filters' })
+const emptyValue = { name: t('all'), value: null }
+
+const {{cookiecutter.featureNamePlural}}Filters = ({ open, onCancel, onApply, initialFilters }) => {
+  const { t } = useTranslation('features', { keyPrefix: '{{cookiecutter.featureNamePlural}}.filters' })
 
   const { handleChange, values, setValues, handleSubmit, setFieldValue } = useFormik({
     initialValues: initialFilters,
@@ -45,25 +47,25 @@ const CategoriesFilters = ({ open, onCancel, onApply, initialFilters }) => {
         label={t('active')}
         options={entitiesToOptions(ACTIVE_OPTIONS)}
         fullWidth
-        emptyValue={{ name: t('all'), value: null }}
+        emptyValue={emptyValue}
         {...getFieldProps('active')}
       />
     </Filters>
   )
 }
 
-CategoriesFilters.defaultProps = {
+{{cookiecutter.featureNamePlural}}Filters.defaultProps = {
   initialFilters: {
     name: '',
     active: '',
   },
 }
 
-CategoriesFilters.propTypes = {
+{{cookiecutter.featureNamePlural}}Filters.propTypes = {
   open: PropTypes.bool,
   onCancel: PropTypes.func.isRequired,
   onApply: PropTypes.func.isRequired,
   initialFilters: PropTypes.object.isRequired,
 }
 
-export default CategoriesFilters
+export default {{cookiecutter.featureNamePlural}}Filters

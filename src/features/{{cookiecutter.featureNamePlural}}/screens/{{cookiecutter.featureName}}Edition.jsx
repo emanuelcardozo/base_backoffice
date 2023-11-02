@@ -8,6 +8,8 @@ import useFetchCategoryDetail from '../hooks/use{{cookiecutter.featureName}}Deta
 import { editionCategoryFromAPI } from '../transformers'
 import useCategoryFormCancelDialog from '../hooks/use{{cookiecutter.featureName}}FormCancelDialog'
 
+const direction = { md: 'row', xs: 'column' }
+
 export default function CategoryEdition() {
   const { t } = useTranslation('features', { keyPrefix: 'Categories' })
   const { id } = useParams()
@@ -20,12 +22,12 @@ export default function CategoryEdition() {
       <Stack spacing={3} my={3}>
         <SectionBackButton label={t('listing.title')} to="/categories" />
         <Stack
-          direction={{ md: 'row', xs: 'column' }}
+          direction={direction}
           justifyContent="space-between"
           spacing={4}
           alignItems="flex-start"
         >
-          <Stack direction="row" spacing={2} sx={{ alignItems: 'center' }}>
+          <Stack direction="row" spacing={2} alignItems="center">
             <Typography variant="h4">{t('edit.title')}</Typography>
           </Stack>
         </Stack>

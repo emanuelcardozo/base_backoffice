@@ -1,32 +1,32 @@
 import { lazy } from 'react'
 import Loadable from 'components/Loadable'
 
-const CategoriesList = Loadable(lazy(() => import('./screens/{{cookiecutter.featureName}}List')))
-const CategoryDetail = Loadable(lazy(() => import('./screens/{{cookiecutter.featureName}}Detail')))
-const CategoryCreation = Loadable(
+const {{cookiecutter.featureNamePlural}}List = Loadable(lazy(() => import('./screens/{{cookiecutter.featureName}}List')))
+const {{cookiecutter.featureName}}Detail = Loadable(lazy(() => import('./screens/{{cookiecutter.featureName}}Detail')))
+const {{cookiecutter.featureName}}Creation = Loadable(
   lazy(() => import('./screens/{{cookiecutter.featureName}}Creation'))
 )
-const CategoryEdition = Loadable(
+const {{cookiecutter.featureName}}Edition = Loadable(
   lazy(() => import('./screens/{{cookiecutter.featureName}}Edition'))
 )
-
-const CategoriesRoutes = [
+``
+const {{cookiecutter.featureNamePlural}}Routes = [
   {
-    path: 'categories',
-    element: <CategoriesList />,
+    path: '{{cookiecutter.featureNamePlural}}',
+    element: <{{cookiecutter.featureNamePlural}}List />,
   },
   {
-    path: 'categories/create',
-    element: <CategoryCreation />,
+    path: '{{cookiecutter.featureNamePlural}}/create',
+    element: <{{cookiecutter.featureName}}Creation />,
   },
   {
-    path: 'categories/:id',
-    element: <CategoryDetail />,
+    path: '{{cookiecutter.featureNamePlural}}/:id',
+    element: <{{cookiecutter.featureName}}Detail />,
   },
   {
-    path: 'categories/:id/edit',
-    element: <CategoryEdition />,
+    path: '{{cookiecutter.featureNamePlural}}/:id/edit',
+    element: <{{cookiecutter.featureName}}Edition />,
   },
 ]
 
-export default CategoriesRoutes
+export default {{cookiecutter.featureNamePlural}}Routes

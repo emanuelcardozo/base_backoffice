@@ -15,6 +15,7 @@ import LoadingValue from 'components/LoadingValue'
 import useFetchCategoryDetail from '../hooks/use{{cookiecutter.featureName}}Detail'
 
 const BASIC_DETAILS_FIELDS = ['name', 'active', 'createdAt']
+const styles = { width: '100%', maxWidth: 360, bgcolor: 'background.paper' }
 
 export default function CategoryDetail() {
   const { id } = useParams()
@@ -28,8 +29,8 @@ export default function CategoryDetail() {
         <SectionBackButton label={t('listing.title')} to="/categories" />
         <Card>
           <CardHeader title={t('details.details')} />
-          <CardContent sx={{ pt: 0 }}>
-            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+          <CardContent pt={0}>
+            <List sx={styles}>
               {BASIC_DETAILS_FIELDS.map((fieldName) => (
                 <ListItem key={fieldName} disableGutters>
                   <ListItemText

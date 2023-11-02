@@ -43,8 +43,8 @@
     "saveAndActivate": "Guardar y activar"
   },
   "dialog": {
-    "title": "{{action}} en p¡p",
-    "content": "¿Confirma que desea {{action, lowercase}} la categoría en p¡p?",
+    "title": "'Action' en p¡p",
+    "content": "¿Confirma que desea 'action' la categoría en p¡p?",
     "hide": "Desactivar",
     "unhide": "Activar",
     "confirm": "Desactivar",
