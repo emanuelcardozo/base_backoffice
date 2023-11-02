@@ -11,6 +11,9 @@ const config = {
     msCategories: {
       baseUrl: import.meta.env.VITE_MS_CATEGORIES_API_URL,
     },
+    msTypes: {
+      baseUrl: import.meta.env.VITE_MS_TYPES_API_URL,
+    },
   },
 }
 
