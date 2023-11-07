@@ -5,10 +5,10 @@ import CardFormBlock from 'components/CardFormBlock/CardFormBlock'
 import { Stack, TextField, Button } from '@mui/material'
 import { LoadingButton } from '@mui/lab'
 import { useFormik } from 'formik'
-import CategorySchema from 'features/{{cookiecutter.resource_name}}/schema/CategorySchema'
+import CategorySchema from 'features/Locales/schema/CategorySchema'
 
 const direction = { xs: 'column-reverse', sm: 'row' }
-function CategoryForm({ onCancel, onSubmit, initialValues, isSubmitting }) {
+function LocalForm({ onCancel, onSubmit, initialValues, isSubmitting }) {
   const { t, i18n } = useTranslation(['features'], { keyPrefix: 'Categories.form' })
 
   useEffect(() => {
@@ -78,7 +78,7 @@ function CategoryForm({ onCancel, onSubmit, initialValues, isSubmitting }) {
   )
 }
 
-CategoryForm.defaultProps = {
+LocalForm.defaultProps = {
   initialValues: {
     name: '',
     active: false,
@@ -86,11 +86,11 @@ CategoryForm.defaultProps = {
   isSubmitting: false,
 }
 
-CategoryForm.propTypes = {
+LocalForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
   initialValues: PropTypes.object,
   isSubmitting: PropTypes.bool,
 }
 
-export default CategoryForm
+export default LocalForm

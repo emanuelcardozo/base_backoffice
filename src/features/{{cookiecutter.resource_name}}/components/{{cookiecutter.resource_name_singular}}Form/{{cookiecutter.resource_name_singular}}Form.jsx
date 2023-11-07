@@ -8,7 +8,7 @@ import { useFormik } from 'formik'
 import CategorySchema from 'features/{{cookiecutter.resource_name}}/schema/CategorySchema'
 
 const direction = { xs: 'column-reverse', sm: 'row' }
-function CategoryForm({ onCancel, onSubmit, initialValues, isSubmitting }) {
+function {{cookiecutter.resource_name_singular}}Form({ onCancel, onSubmit, initialValues, isSubmitting }) {
   const { t, i18n } = useTranslation(['features'], { keyPrefix: 'Categories.form' })
 
   useEffect(() => {
@@ -78,7 +78,7 @@ function CategoryForm({ onCancel, onSubmit, initialValues, isSubmitting }) {
   )
 }
 
-CategoryForm.defaultProps = {
+{{cookiecutter.resource_name_singular}}Form.defaultProps = {
   initialValues: {
     name: '',
     active: false,
@@ -86,11 +86,11 @@ CategoryForm.defaultProps = {
   isSubmitting: false,
 }
 
-CategoryForm.propTypes = {
+{{cookiecutter.resource_name_singular}}Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
   initialValues: PropTypes.object,
   isSubmitting: PropTypes.bool,
 }
 
-export default CategoryForm
+export default {{cookiecutter.resource_name_singular}}Form

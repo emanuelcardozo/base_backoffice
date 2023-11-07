@@ -3,7 +3,7 @@ import { TextField } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useCallback } from 'react'
 import { useFormik } from 'formik'
-import CategoryFilterSchema from 'features/{{cookiecutter.resource_name}}/schema/CategoryFilterSchema'
+import CategoryFilterSchema from 'features/Locales/schema/CategoryFilterSchema'
 import Filters from 'components/Filters/index.js'
 import { useMemo } from 'react'
 import entitiesToOptions from 'utils/entityToOptions.js'
@@ -11,7 +11,7 @@ import Select from 'components/Select'
 
 const emptyValue = { name: t('all'), value: null }
 
-const CategoriesFilters = ({ open, onCancel, onApply, initialFilters }) => {
+const LocalFilters = ({ open, onCancel, onApply, initialFilters }) => {
   const { t } = useTranslation('features', { keyPrefix: 'Categories.filters' })
 
   const { handleChange, values, setValues, handleSubmit, setFieldValue } = useFormik({
@@ -54,18 +54,18 @@ const CategoriesFilters = ({ open, onCancel, onApply, initialFilters }) => {
   )
 }
 
-CategoriesFilters.defaultProps = {
+LocalFilters.defaultProps = {
   initialFilters: {
     name: '',
     active: '',
   },
 }
 
-CategoriesFilters.propTypes = {
+LocalFilters.propTypes = {
   open: PropTypes.bool,
   onCancel: PropTypes.func.isRequired,
   onApply: PropTypes.func.isRequired,
   initialFilters: PropTypes.object.isRequired,
 }
 
-export default CategoriesFilters
+export default LocalFilters

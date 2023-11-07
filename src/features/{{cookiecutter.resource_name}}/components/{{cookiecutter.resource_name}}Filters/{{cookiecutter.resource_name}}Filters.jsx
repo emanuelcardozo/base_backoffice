@@ -11,7 +11,7 @@ import Select from 'components/Select'
 
 const emptyValue = { name: t('all'), value: null }
 
-const CategoriesFilters = ({ open, onCancel, onApply, initialFilters }) => {
+const {{cookiecutter.resource_name_singular}}Filters = ({ open, onCancel, onApply, initialFilters }) => {
   const { t } = useTranslation('features', { keyPrefix: 'Categories.filters' })
 
   const { handleChange, values, setValues, handleSubmit, setFieldValue } = useFormik({
@@ -54,18 +54,18 @@ const CategoriesFilters = ({ open, onCancel, onApply, initialFilters }) => {
   )
 }
 
-CategoriesFilters.defaultProps = {
+{{cookiecutter.resource_name_singular}}Filters.defaultProps = {
   initialFilters: {
     name: '',
     active: '',
   },
 }
 
-CategoriesFilters.propTypes = {
+{{cookiecutter.resource_name_singular}}Filters.propTypes = {
   open: PropTypes.bool,
   onCancel: PropTypes.func.isRequired,
   onApply: PropTypes.func.isRequired,
   initialFilters: PropTypes.object.isRequired,
 }
 
-export default CategoriesFilters
+export default {{cookiecutter.resource_name_singular}}Filters

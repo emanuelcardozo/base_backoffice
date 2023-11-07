@@ -33,4 +33,31 @@ export const itemsGroupCommonUser = [
       </SvgIcon>
     ),
   },
+  {
+    title: 'Types',
+    path: '/types',
+    icon: (
+      <SvgIcon fontSize="small">
+        <TagIcon />
+      </SvgIcon>
+    ),
+  },
+  {
+    title: 'Skills',
+    path: '/skills',
+    icon: (
+      <SvgIcon fontSize="small">
+        <TagIcon />
+      </SvgIcon>
+    ),
+  },
+  {
+    title: 'Pokemones',
+    path: '/pokemones',
+    icon: (
+      <SvgIcon fontSize="small">
+        <TagIcon />
+      </SvgIcon>
+    ),
+  },
 ]
