@@ -1,7 +1,13 @@
 import * as Yup from 'yup'
 
 const PokemonSchema = Yup.object({
-  name: Yup.string().required('validations:required'),
+  
+  nombre: Yup.string().required('validations:required'),
+  
+  edad: Yup.number().required('validations:required'),
+  
+  atrapado: Yup.bool().required('validations:required'),
+  
 })
 
 export default PokemonSchema

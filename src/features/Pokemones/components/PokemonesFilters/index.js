@@ -1,1 +1,1 @@
-export { default } from './PokemonesFilters.jsx'
+export { default } from './PokemonesFilters.js'

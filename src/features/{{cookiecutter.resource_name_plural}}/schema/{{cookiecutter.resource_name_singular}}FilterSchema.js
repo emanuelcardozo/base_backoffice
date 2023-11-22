@@ -1,8 +1,9 @@
 import * as Yup from 'yup'
 
 const {{cookiecutter.resource_name_singular}}FilterSchema = Yup.object({
-  name: Yup.string(),
-  active: Yup.string(),
+  {% for field in cookiecutter.__fields %}
+  {{field.name}}: Yup.{{field.type}}().required('validations:required'),
+  {% endfor %}
 })
 
 export default {{cookiecutter.resource_name_singular}}FilterSchema

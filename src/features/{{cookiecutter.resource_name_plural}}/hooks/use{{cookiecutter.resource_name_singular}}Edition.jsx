@@ -31,7 +31,7 @@ export default function useCategoryEdition(id) {
 
     const message = t('editedSuccessfully', {
       name: response.data.name,
-      type: t('features:Categories:singular'),
+      type: t('features:{{cookiecutter.resource_name_plural|capitalize}}:singular'),
     })
 
     enqueueSnackbar(message, {

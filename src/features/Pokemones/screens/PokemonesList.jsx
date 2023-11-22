@@ -20,9 +20,13 @@ const PokemonList = () => {
 
   const columns = useMemo(
     () => [
-      { header: t('fields.name'), fieldName: 'name', sortable: true },
-      { header: t('fields.active'), fieldName: 'active', sortable: true },
-      { header: t('fields.createdAt'), fieldName: 'createdAt', sortable: true },
+      
+      { header: t('fields.nombre'), fieldName: 'nombre', sortable: true },
+      
+      { header: t('fields.edad'), fieldName: 'edad', sortable: true },
+      
+      { header: t('fields.atrapado'), fieldName: 'atrapado', sortable: true },
+      
     ],
     [t]
   )
@@ -46,7 +50,7 @@ const PokemonList = () => {
         <Card>
           <PokemonesTable
             columns={columns}
-            rows={Pokemones}
+            rows={ Pokemones }
             loading={loading}
             onClickView={handleClickView}
             onClickEdit={handleClickEdit}

@@ -11,7 +11,7 @@ export default function useFetchPokemones(filters) {
   const { closeSnackbar, enqueueSnackbar } = useSnackbar()
   const [Pokemones, setPokemones] = useState(null)
   const { doFetch, response, paginator, loading, error, retry } = usePaginatedFetch({
-    url: `${config.api.msPokemones.baseUrl}/pokemones`,
+    url: `${config.api.msPokemones.baseUrl}/Pokemones`,
     filters,
   })
 

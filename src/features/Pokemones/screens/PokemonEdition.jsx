@@ -33,7 +33,7 @@ export default function PokemonEdition() {
         </Stack>
         <PokemonForm
           onSubmit={onSubmit}
-          initialValues={(Pokemon)}
+          initialValues={ Pokemon }
           mode="edit"
           isLoading={loading}
           isSubmitting={isSubmitting}

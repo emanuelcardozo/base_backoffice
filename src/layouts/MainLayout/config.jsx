@@ -33,74 +33,11 @@ export const itemsGroupCommonUser = [
       </SvgIcon>
     ),
   },
-  {
-    title: 'Types',
-    path: '/types',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
-  {
-    title: 'Skills',
-    path: '/skills',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
-  {
-    title: 'Pokemones',
-    path: '/pokemones',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
 
   // automatic generated menu items
-{
-  name: 'Mates',
-  path: '/mates',
-  icon: (
-    <SvgIcon fontSize='small'>
-      <TagIcon />
-    </SvgIcon>
-  ),
-},
   {
-    name: 'Monedas',
-    path: '/monedas',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
-  {
-    name: 'Modelos',
-    path: '/modelos',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
-  {
-    name: 'Descuentos',
-    path: '/descuentos',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
-  {
-    name: 'Amigos',
-    path: '/amigos',
+    name: 'Pokemones',
+    path: '/pokemones',
     icon: (
       <SvgIcon fontSize="small">
         <TagIcon />

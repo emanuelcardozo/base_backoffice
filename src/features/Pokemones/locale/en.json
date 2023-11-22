@@ -1,7 +1,7 @@
 {
-  "singular": "Category",
+  "singular": "Pokemon",
   "listing": {
-    "title": "Categories"
+    "title": "Pokemones"
   },
   "details": {
     "details": "Details"
@@ -13,7 +13,7 @@
     "createdAt": "Created at"
   },
   "create": {
-    "title": "New Category",
+    "title": "New Pokemon",
     "cancelDialog": {
       "title": "Cancel category creation",
       "content": "Are you sure to cancel this category? All the progress will be lost",
@@ -22,7 +22,7 @@
     }
   },
   "edit": {
-    "title": "Edit Category",
+    "title": "Edit Pokemon",
     "cancelDialog": {
       "title": "Cancel category edition",
       "content": "Are you sure to cancel this category? All the progress will be lost",

@@ -2,27 +2,45 @@ import { useCallback, useMemo, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 import CardFormBlock from 'components/CardFormBlock/CardFormBlock'
-import { Stack, TextField, Button } from '@mui/material'
+import { Stack, TextField, Button, capitalize } from '@mui/material'
 import { LoadingButton } from '@mui/lab'
 import { useFormik } from 'formik'
-import CategorySchema from 'features/Pokemones/schema/CategorySchema'
+import PokemonSchema from 'features/Pokemones/schema/PokemonSchema'
 
 const direction = { xs: 'column-reverse', sm: 'row' }
-function PokemonForm({ onCancel, onSubmit, initialValues, isSubmitting }) {
-  const { t, i18n } = useTranslation(['features'], { keyPrefix: 'Categories.form' })
 
-  useEffect(() => {
-    setValues(initialValues)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialValues])
+const EMPTY_POKEMON = {
+  
+    
+      nombre: '',
+    
+  
+    
+      edad: 0,
+    
+  
+    
+      atrapado: false,
+    
+  
+}
 
-  const { handleChange, handleSubmit, handleBlur, setValues, touched, errors, values, isValid } =
+function PokemonForm({ onCancel, onSubmit, initialValues, mode, isLoading, isSubmitting }) {
+  const { t, i18n } = useTranslation(['features'], { keyPrefix: 'Pokemones.form' })
+
+  const { handleChange, handleSubmit, handleBlur, setValues, setFieldValue, validateForm, touched, errors, values, isValid } =
     useFormik({
       initialValues,
       validateOnChange: false,
-      validationSchema: CategorySchema,
+      validationSchema: PokemonSchema,
       onSubmit,
     })
+
+    useEffect(() => {
+      setValues(initialValues)
+      validateForm(initialValues)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [initialValues])
 
   const getFieldProps = useCallback(
     (name) => ({
@@ -32,17 +50,30 @@ function PokemonForm({ onCancel, onSubmit, initialValues, isSubmitting }) {
       helperText: touched[name] && i18n.t(errors[name]),
       onBlur: handleBlur,
       onChange: handleChange,
+      onClear: () => setFieldValue(name, EMPTY_PUBLICATION[name]),
     }),
     [touched, errors, handleBlur, handleChange, values, i18n]
   )
 
-  const canSave = useMemo(() => isValid && Object.keys(touched).length, [isValid, touched])
+  const canSave = useMemo(() => {
+    if (mode === 'edit') return isValid
+
+    return isValid && Object.keys(touched).length
+  }, [isValid, touched, mode])
+
+  const styles = { opacity: isLoading ? 0.5 : 1 }
 
   return (
     <form noValidate onSubmit={handleSubmit}>
-      <Stack spacing={3}>
+      <Stack spacing={3} sx={styles}>
         <CardFormBlock title={t('details')}>
-          <TextField fullWidth label={t('name')} {...getFieldProps('name')} />
+          
+            <TextField fullWidth label={t('nombre')} {...getFieldProps('nombre')} />
+          
+            <TextField fullWidth label={t('edad')} {...getFieldProps('edad')} />
+          
+            <TextField fullWidth label={t('atrapado')} {...getFieldProps('atrapado')} />
+          
         </CardFormBlock>
         <Stack direction={direction} spacing={3} justifyContent="flex-end">
           <Button size="large" variant="text" onClick={onCancel}>
@@ -79,18 +110,19 @@ function PokemonForm({ onCancel, onSubmit, initialValues, isSubmitting }) {
 }
 
 PokemonForm.defaultProps = {
-  initialValues: {
-    name: '',
-    active: false,
-  },
+  initialValues: EMPTY_POKEMON,
+  mode: 'create',
+  isLoading: false,
   isSubmitting: false,
 }
 
 PokemonForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.object,
-  isSubmitting: PropTypes.bool,
+  mode: PropTypes.string,
+  isLoading: PropTypes.bool,
+  isSubmitting: PropTypes.boo
 }
 
 export default PokemonForm

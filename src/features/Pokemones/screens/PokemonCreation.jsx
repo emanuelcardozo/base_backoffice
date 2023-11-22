@@ -1,7 +1,7 @@
 import { Container, Stack, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import SectionBackButton from 'components/SectionBackButton'
-import PokemonForm from '../components/Pokemon'
+import PokemonForm from '../components/PokemonForm'
 import usePokemonFormCancelDialog from '../hooks/usePokemonFormCancelDialog'
 import usePokemonCreation from '../hooks/usePokemonCreation'
 

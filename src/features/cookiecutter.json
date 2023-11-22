@@ -1,9 +1,9 @@
 {
-    "resource_name_plural": "Mates",
-    "resource_name_singular": "Mate",
+    "resource_name_plural": "Pokemones",
+    "resource_name_singular": "Pokemon",
     "__fields": [
-        {"name":"tamano","type":"number"},
-        {"name":"nombre2","type":"string"},
-        {"name":"caro","type":"bool"}
+        {"name":"nombre","type":"string"},
+        {"name":"edad","type":"number"},
+        {"name":"atrapado","type":"bool"}
     ]
 }
