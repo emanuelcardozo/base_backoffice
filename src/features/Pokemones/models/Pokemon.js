@@ -1,16 +1,16 @@
 class Pokemon {
   constructor(
-    nombre,
+    name,
 
-    edad,
+    id,
 
-    adulto
+    skills
   ) {
-    this.nombre = nombre
+    this.name = name
 
-    this.edad = edad
+    this.id = id
 
-    this.adulto = adulto
+    this.skills = skills
   }
 
   static fromAPI(data = {}) {

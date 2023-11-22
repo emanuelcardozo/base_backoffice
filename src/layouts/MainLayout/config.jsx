@@ -36,44 +36,8 @@ export const itemsGroupCommonUser = [
 
   // automatic generated menu items
   {
-    title: 'Jauria',
-    path: '/jauria',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
-  {
-    title: 'Mates',
-    path: '/mates',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
-  {
-    title: 'Compus',
-    path: '/compus',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
-  {
-    title: 'Comidas',
-    path: '/comidas',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
-  {
-    title: 'Animalazos',
-    path: '/animalazos',
+    title: 'Hijos',
+    path: '/hijos',
     icon: (
       <SvgIcon fontSize="small">
         <TagIcon />

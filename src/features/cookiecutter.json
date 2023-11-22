@@ -1,11 +1,9 @@
 {
-    "resource_name_plural": "Jauria",
-    "resource_name_singular": "Perro",
+    "resource_name_plural": "Hijos",
+    "resource_name_singular": "Hijo",
     "__fields": [
         {"name":"nombre","type":"string"},
-        {"name":"fecha","type":"date"},
-        {"name":"id","type":"number"},
-        {"name":"lindo","type":"bool"},
-        {"name":"gustos","type":"array"}
+        {"name":"edad","type":"number"},
+        {"name":"fecha_nacimiento","type":"date"}
     ]
 }

@@ -5,20 +5,20 @@ import CardFormBlock from 'components/CardFormBlock/CardFormBlock'
 import { Stack, TextField, Button } from '@mui/material'
 import { LoadingButton } from '@mui/lab'
 import { useFormik } from 'formik'
-import PokemonSchema from 'features/Pokemones/schema/PokemonSchema'
+import HijoSchema from 'features/Hijos/schema/HijoSchema'
 
 const direction = { xs: 'column-reverse', sm: 'row' }
 
-const EMPTY_POKEMON = {
-  name: '',
+const EMPTY_HIJO = {
+  nombre: '',
 
-  id: 0,
+  edad: 0,
 
-  skills: [],
+  fecha_nacimiento: null,
 }
 
-function PokemonForm({ onCancel, onSubmit, initialValues, mode, isLoading, isSubmitting }) {
-  const { t, i18n } = useTranslation(['features'], { keyPrefix: 'Pokemones.form' })
+function HijoForm({ onCancel, onSubmit, initialValues, mode, isLoading, isSubmitting }) {
+  const { t, i18n } = useTranslation(['features'], { keyPrefix: 'Hijos.form' })
 
   const {
     handleChange,
@@ -34,7 +34,7 @@ function PokemonForm({ onCancel, onSubmit, initialValues, mode, isLoading, isSub
   } = useFormik({
     initialValues,
     validateOnChange: false,
-    validationSchema: PokemonSchema,
+    validationSchema: HijoSchema,
     onSubmit,
   })
 
@@ -52,7 +52,7 @@ function PokemonForm({ onCancel, onSubmit, initialValues, mode, isLoading, isSub
       helperText: touched[name] && i18n.t(errors[name]),
       onBlur: handleBlur,
       onChange: handleChange,
-      onClear: () => setFieldValue(name, EMPTY_POKEMON[name]),
+      onClear: () => setFieldValue(name, EMPTY_HIJO[name]),
     }),
     [touched, errors, handleBlur, handleChange, values, i18n]
   )
@@ -69,11 +69,15 @@ function PokemonForm({ onCancel, onSubmit, initialValues, mode, isLoading, isSub
     <form noValidate onSubmit={handleSubmit}>
       <Stack spacing={3} sx={styles}>
         <CardFormBlock title={t('details')}>
-          <TextField fullWidth label={t('name')} {...getFieldProps('name')} />
+          <TextField fullWidth label={t('nombre')} {...getFieldProps('nombre')} />
 
-          <TextField fullWidth label={t('id')} {...getFieldProps('id')} />
+          <TextField fullWidth label={t('edad')} {...getFieldProps('edad')} />
 
-          <TextField fullWidth label={t('skills')} {...getFieldProps('skills')} />
+          <TextField
+            fullWidth
+            label={t('fecha_nacimiento')}
+            {...getFieldProps('fecha_nacimiento')}
+          />
         </CardFormBlock>
         <Stack direction={direction} spacing={3} justifyContent="flex-end">
           <Button size="large" variant="text" onClick={onCancel}>
@@ -109,14 +113,14 @@ function PokemonForm({ onCancel, onSubmit, initialValues, mode, isLoading, isSub
   )
 }
 
-PokemonForm.defaultProps = {
-  initialValues: EMPTY_POKEMON,
+HijoForm.defaultProps = {
+  initialValues: EMPTY_HIJO,
   mode: 'create',
   isLoading: false,
   isSubmitting: false,
 }
 
-PokemonForm.propTypes = {
+HijoForm.propTypes = {
   onCancel: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.object,
@@ -125,4 +129,4 @@ PokemonForm.propTypes = {
   isSubmitting: PropTypes.boo,
 }
 
-export default PokemonForm
+export default HijoForm

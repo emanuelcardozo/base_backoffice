@@ -1,0 +1,57 @@
+{
+  "singular": "Hijo",
+  "listing": {
+    "title": "Hijos"
+  },
+  "details": {
+    "details": "Details"
+  },
+  "fields": {
+    "nombre": "nombre",
+    "edad": "edad",
+    "fecha_nacimiento": "fecha_nacimiento",
+    "actions": "Actions"
+  },
+  "create": {
+    "title": "New Hijo",
+    "cancelDialog": {
+      "title": "Cancel hijo creation",
+      "content": "Are you sure to cancel this hijo? All the progress will be lost",
+      "confirm": "Continue editing",
+      "cancel": "Exit"
+    }
+  },
+  "edit": {
+    "title": "Edit Hijo",
+    "cancelDialog": {
+      "title": "Cancel hijo edition",
+      "content": "Are you sure to cancel this hijo? All the progress will be lost",
+      "confirm": "Continue editing",
+      "cancel": "Exit"
+    }
+  },
+  "filters": {
+    "nombre": "nombre",
+    "edad": "edad",
+    "fecha_nacimiento": "fecha_nacimiento",
+    "all": "All"
+  },
+  "form": {
+    "details": "Basic details",
+    "name": "Name",
+    "cancel": "Cancel",
+    "nombre": "nombre",
+    "edad": "edad",
+    "fecha_nacimiento": "fecha_nacimiento",
+    "saveAndNoActivate": "Save without activation",
+    "saveAndActivate": "Save with activation"
+  },
+  "dialog": {
+    "title": "Action on Backoffice",
+    "content": "Are you sure to action this hijo on p¡p?",
+    "hide": "Deactivate",
+    "unhide": "Activate",
+    "confirm": "Activate",
+    "cancel": "Cancel"
+  }
+}

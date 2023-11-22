@@ -4,8 +4,12 @@ import { initReactI18next } from 'react-i18next'
 import enJSON from './locale/en.json'
 import esJSON from './locale/es.json'
 // Features
-import esCategoriesJSON from 'features/{{cookiecutter.resource_name_plural}}/locale/es.json'
-import enCategoriesJSON from 'features/{{cookiecutter.resource_name_plural}}/locale/en.json'
+import esHijosJSON from 'features/Hijos/locale/es.json'
+import enHijosJSON from 'features/Hijos/locale/en.json'
+import esPokemonesJSON from 'features/Pokemones/locale/es.json'
+import enPokemonesJSON from 'features/Pokemones/locale/en.json'
+import esCategoriesJSON from 'features/Categories/locale/es.json'
+import enCategoriesJSON from 'features/Categories/locale/en.json'
 
 i18n
   .use(LanguageDetector)
@@ -36,6 +40,23 @@ i18n.addResourceBundle('en', 'features', {
 
 i18n.addResourceBundle('es', 'features', {
   Categories: esCategoriesJSON,
+})
+
+// add more resources here
+i18n.addResourceBundle('es', 'features', {
+  Hijos: esHijosJSON,
+})
+
+i18n.addResourceBundle('en', 'features', {
+  Hijos: enHijosJSON,
+})
+
+i18n.addResourceBundle('es', 'features', {
+  Pokemones: esPokemonesJSON,
+})
+
+i18n.addResourceBundle('en', 'features', {
+  Pokemones: enPokemonesJSON,
 })
 
 export default i18n

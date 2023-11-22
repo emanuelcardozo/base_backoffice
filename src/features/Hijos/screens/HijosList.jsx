@@ -2,29 +2,29 @@ import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Card, Container, Stack } from '@mui/material'
 import SectionHeader from 'components/SectionHeader'
-import useFetchPokemones from '../hooks/useFetchPokemones'
-import PokemonesTable from '../components/PokemonesTable'
+import useFetchHijos from '../hooks/useFetchHijos'
+import HijosTable from '../components/HijosTable'
 import { useNavigate } from 'react-router-dom'
 import useFilters from 'hooks/useFilters.js'
-import useDeletePokemon from '../hooks/useDeletePokemon'
-// import PokemonesFilters from '../components/PokemonesFilters'
+import useDeleteHijo from '../hooks/useDeleteHijo'
+// import HijosFilters from '../components/HijosFilters'
 
-const PokemonList = () => {
+const HijoList = () => {
   const navigate = useNavigate()
-  const { t } = useTranslation('features', { keyPrefix: 'Pokemones' })
+  const { t } = useTranslation('features', { keyPrefix: 'Hijos' })
   // const { isOpenFilters, openFilters, onCancel, onApply, count, filters } = useFilters()
   const { filters } = useFilters()
-  const { Pokemones, paginator, loading, refresh } = useFetchPokemones(filters)
-  const { onRemove } = useDeletePokemon(refresh)
+  const { Hijos, paginator, loading, refresh } = useFetchHijos(filters)
+  const { onRemove } = useDeleteHijo(refresh)
   const { total, page, setPage, perPage, setPerPage } = paginator
 
   const columns = useMemo(
     () => [
-      { header: t('fields.name'), fieldName: 'name', sortable: true },
+      { header: t('fields.nombre'), fieldName: 'nombre', sortable: true },
 
-      { header: t('fields.id'), fieldName: 'id', sortable: true },
+      { header: t('fields.edad'), fieldName: 'edad', sortable: true },
 
-      { header: t('fields.skills'), fieldName: 'skills', sortable: true },
+      { header: t('fields.fecha_nacimiento'), fieldName: 'fecha_nacimiento', sortable: true },
     ],
     [t]
   )
@@ -44,11 +44,11 @@ const PokemonList = () => {
           // onClickFilterButton={openFilters}
           // filtersCount={count}
         />
-        {/* <PokemonesFilters open={isOpenFilters} onCancel={onCancel} onApply={onApply} /> */}
+        {/* <HijosFilters open={isOpenFilters} onCancel={onCancel} onApply={onApply} /> */}
         <Card>
-          <PokemonesTable
+          <HijosTable
             columns={columns}
-            rows={Pokemones}
+            rows={Hijos}
             loading={loading}
             onClickView={handleClickView}
             onClickEdit={handleClickEdit}
@@ -66,4 +66,4 @@ const PokemonList = () => {
   )
 }
 
-export default PokemonList
+export default HijoList

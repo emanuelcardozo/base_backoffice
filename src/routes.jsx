@@ -4,11 +4,7 @@ import MainLayout from 'layouts/MainLayout'
 import AuthLayout from 'layouts/AuthLayout'
 
 // routes
-import JauriaRoutes from 'features/jauria/routes'
-import MatesRoutes from 'features/mates/routes'
-import CompusRoutes from 'features/compus/routes'
-import ComidasRoutes from 'features/comidas/routes'
-import AnimalazosRoutes from 'features/animalazos/routes'
+import HijosRoutes from 'features/hijos/routes'
 import PokemonesRoutes from 'features/pokemones/routes'
 import CategoryRoutes from 'features/Categories/routes'
 import ErrorRoutes from 'features/Errors/routes'
@@ -27,11 +23,7 @@ const MainRoutes = {
   children: [
     ...CategoryRoutes,
     // add yours features route here
-    ...JauriaRoutes,
-    ...MatesRoutes,
-    ...CompusRoutes,
-    ...ComidasRoutes,
-    ...AnimalazosRoutes,
+    ...HijosRoutes,
     ...PokemonesRoutes,
   ],
 }
