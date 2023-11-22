@@ -1,0 +1,53 @@
+{
+  "singular": "Pokemon",
+  "listing": {
+    "title": "Pokemones"
+  },
+  "details": {
+    "details": "Details"
+  },
+  "fields": {
+    "id": "Id",
+    "name": "Name",
+    "active": "Active",
+    "createdAt": "Created at"
+  },
+  "create": {
+    "title": "New Pokemon",
+    "cancelDialog": {
+      "title": "Cancel category creation",
+      "content": "Are you sure to cancel this category? All the progress will be lost",
+      "confirm": "Continue editing",
+      "cancel": "Exit"
+    }
+  },
+  "edit": {
+    "title": "Edit Pokemon",
+    "cancelDialog": {
+      "title": "Cancel category edition",
+      "content": "Are you sure to cancel this category? All the progress will be lost",
+      "confirm": "Continue editing",
+      "cancel": "Exit"
+    }
+  },
+  "filters": {
+    "name": "Name",
+    "active": "Active",
+    "all": "All"
+  },
+  "form": {
+    "details": "Basic details",
+    "name": "Name",
+    "cancel": "Cancel",
+    "saveAndNoActivate": "Save without activation",
+    "saveAndActivate": "Save with activation"
+  },
+  "dialog": {
+    "title": "Action on Backoffice",
+    "content": "Are you sure to action this category on p¡p?",
+    "hide": "Deactivate",
+    "unhide": "Activate",
+    "confirm": "Activate",
+    "cancel": "Cancel"
+  }
+}

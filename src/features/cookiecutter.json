@@ -1,9 +1,11 @@
 {
-    "resource_name_plural": "Pokemones",
-    "resource_name_singular": "Pokemon",
+    "resource_name_plural": "Jauria",
+    "resource_name_singular": "Perro",
     "__fields": [
         {"name":"nombre","type":"string"},
-        {"name":"edad","type":"number"},
-        {"name":"adulto","type":"bool"}
+        {"name":"fecha","type":"date"},
+        {"name":"id","type":"number"},
+        {"name":"lindo","type":"bool"},
+        {"name":"gustos","type":"array"}
     ]
 }

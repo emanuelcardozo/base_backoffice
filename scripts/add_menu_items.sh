@@ -9,7 +9,7 @@ archivo_js="../src/layouts/MainLayout/config.jsx"
 resource_name_capitalized="$(tr '[:lower:]' '[:upper:]' <<< ${resource_name:0:1})${resource_name:1}"
 
 new_item="{\n\
-  name: '${resource_name_capitalized}',\n\
+  title: '${resource_name_capitalized}',\n\
   path: '/${resource_name}',\n\
   icon: (\n\
     <SvgIcon fontSize='small'>\n\

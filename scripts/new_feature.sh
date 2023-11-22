@@ -14,6 +14,13 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+# Ejecutar el tercer script y verificar si tuvo éxito
+./add_ms_url.sh "$resource_name_plural_lowercase"
+if [ $? -ne 0 ]; then
+    echo "Error al agregar el item al SideNav."
+    exit 1
+fi
+
 # Ejecutar el segundo script y verificar si tuvo éxito
 ./add_routes.sh "$resource_name_plural_lowercase"
 if [ $? -ne 0 ]; then
@@ -30,15 +37,9 @@ fi
 
 cd ../src/features
 cookiecutter . --no-input
-# prettier --write ./"$resource_name_plural"
-eslint ./"$resource_name_plural" --ext js,jsx --fix
-
-# prettier --write ../layouts/MainLayout/config.jsx
-eslint ../layouts/MainLayout/config.jsx --ext js,jsx --fix
-
-# prettier --write ../routes.jsx
-eslint ../routes.jsx --ext js,jsx --fix
-
 cd ../..
+
+echo "Formateando todo el proyecto."
+npm run lint:fix
 
 echo "Proceso completado exitosamente."

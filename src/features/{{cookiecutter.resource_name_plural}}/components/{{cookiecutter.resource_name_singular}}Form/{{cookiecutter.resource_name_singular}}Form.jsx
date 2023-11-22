@@ -2,7 +2,7 @@ import { useCallback, useMemo, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 import CardFormBlock from 'components/CardFormBlock/CardFormBlock'
-import { Stack, TextField, Button, capitalize } from '@mui/material'
+import { Stack, TextField, Button } from '@mui/material'
 import { LoadingButton } from '@mui/lab'
 import { useFormik } from 'formik'
 import {{cookiecutter.resource_name_singular}}Schema from 'features/{{cookiecutter.resource_name_plural}}/schema/{{cookiecutter.resource_name_singular}}Schema'
@@ -50,7 +50,7 @@ function {{cookiecutter.resource_name_singular}}Form({ onCancel, onSubmit, initi
       helperText: touched[name] && i18n.t(errors[name]),
       onBlur: handleBlur,
       onChange: handleChange,
-      onClear: () => setFieldValue(name, EMPTY_PUBLICATION[name]),
+      onClear: () => setFieldValue(name, EMPTY_{{cookiecutter.resource_name_singular|upper}}[name]),
     }),
     [touched, errors, handleBlur, handleChange, values, i18n]
   )
