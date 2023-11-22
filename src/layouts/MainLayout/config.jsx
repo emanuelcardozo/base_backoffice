@@ -60,4 +60,51 @@ export const itemsGroupCommonUser = [
       </SvgIcon>
     ),
   },
+
+  // automatic generated menu items
+{
+  name: 'Mates',
+  path: '/mates',
+  icon: (
+    <SvgIcon fontSize='small'>
+      <TagIcon />
+    </SvgIcon>
+  ),
+},
+  {
+    name: 'Monedas',
+    path: '/monedas',
+    icon: (
+      <SvgIcon fontSize="small">
+        <TagIcon />
+      </SvgIcon>
+    ),
+  },
+  {
+    name: 'Modelos',
+    path: '/modelos',
+    icon: (
+      <SvgIcon fontSize="small">
+        <TagIcon />
+      </SvgIcon>
+    ),
+  },
+  {
+    name: 'Descuentos',
+    path: '/descuentos',
+    icon: (
+      <SvgIcon fontSize="small">
+        <TagIcon />
+      </SvgIcon>
+    ),
+  },
+  {
+    name: 'Amigos',
+    path: '/amigos',
+    icon: (
+      <SvgIcon fontSize="small">
+        <TagIcon />
+      </SvgIcon>
+    ),
+  },
 ]

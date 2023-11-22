@@ -5,7 +5,7 @@ import CardFormBlock from 'components/CardFormBlock/CardFormBlock'
 import { Stack, TextField, Button } from '@mui/material'
 import { LoadingButton } from '@mui/lab'
 import { useFormik } from 'formik'
-import CategorySchema from 'features/{{cookiecutter.resource_name}}/schema/CategorySchema'
+import CategorySchema from 'features/{{cookiecutter.resource_name_plural}}/schema/CategorySchema'
 
 const direction = { xs: 'column-reverse', sm: 'row' }
 function CategoryForm({ onCancel, onSubmit, initialValues, isSubmitting }) {

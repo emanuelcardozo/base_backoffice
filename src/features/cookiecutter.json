@@ -1,4 +1,9 @@
 {
-  "resource_name": "Categories",
-  "resource_name_singular": "Category"
+    "resource_name_plural": "Mates",
+    "resource_name_singular": "Mate",
+    "__fields": [
+        {"name":"tamano","type":"number"},
+        {"name":"nombre2","type":"string"},
+        {"name":"caro","type":"bool"}
+    ]
 }

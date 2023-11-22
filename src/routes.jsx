@@ -4,6 +4,11 @@ import MainLayout from 'layouts/MainLayout'
 import AuthLayout from 'layouts/AuthLayout'
 
 // routes
+import MatesRoutes from 'features/mates/routes'
+import MonedasRoutes from 'features/monedas/routes'
+import ModelosRoutes from 'features/modelos/routes'
+import DescuentosRoutes from 'features/descuentos/routes'
+import AmigosRoutes from 'features/amigos/routes'
 import CategoryRoutes from 'features/Categories/routes'
 import PokemonRoutes from 'features/Pokemones/routes'
 import TypeRoutes from 'features/Types/routes'
@@ -27,6 +32,11 @@ const MainRoutes = {
     ...TypeRoutes,
     ...SkillRoutes,
     // add yours features route here
+  ...MatesRoutes,
+    ...MonedasRoutes,
+    ...ModelosRoutes,
+    ...DescuentosRoutes,
+    ...AmigosRoutes,
   ],
 }
 

@@ -4,8 +4,8 @@ import { initReactI18next } from 'react-i18next'
 import enJSON from './locale/en.json'
 import esJSON from './locale/es.json'
 // Features
-import esCategoriesJSON from 'features/{{cookiecutter.resource_name}}/locale/es.json'
-import enCategoriesJSON from 'features/{{cookiecutter.resource_name}}/locale/en.json'
+import esCategoriesJSON from 'features/{{cookiecutter.resource_name_plural}}/locale/es.json'
+import enCategoriesJSON from 'features/{{cookiecutter.resource_name_plural}}/locale/en.json'
 
 i18n
   .use(LanguageDetector)
