@@ -35,13 +35,4 @@ export const itemsGroupCommonUser = [
   },
 
   // automatic generated menu items
-  {
-    name: 'Pokemones',
-    path: '/pokemones',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
 ]

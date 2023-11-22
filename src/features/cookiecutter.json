@@ -4,6 +4,6 @@
     "__fields": [
         {"name":"nombre","type":"string"},
         {"name":"edad","type":"number"},
-        {"name":"atrapado","type":"bool"}
+        {"name":"adulto","type":"bool"}
     ]
 }

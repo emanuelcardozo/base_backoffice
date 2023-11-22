@@ -30,6 +30,15 @@ fi
 
 cd ../src/features
 cookiecutter . --no-input
+# prettier --write ./"$resource_name_plural"
+eslint ./"$resource_name_plural" --ext js,jsx --fix
+
+# prettier --write ../layouts/MainLayout/config.jsx
+eslint ../layouts/MainLayout/config.jsx --ext js,jsx --fix
+
+# prettier --write ../routes.jsx
+eslint ../routes.jsx --ext js,jsx --fix
+
 cd ../..
 
 echo "Proceso completado exitosamente."
