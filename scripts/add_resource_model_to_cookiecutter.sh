@@ -56,6 +56,6 @@ done
 json+=$'\n'"    ]"$'\n'"}"
 
 # Guardar el JSON en un archivo
-echo "$json" > ../src/features/cookiecutter.json
+echo "$json" > cookiecutter.json
 
 echo "Proceso completado. JSON guardado en archivo.json."

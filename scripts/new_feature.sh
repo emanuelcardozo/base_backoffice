@@ -36,9 +36,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-cd ../src/features
-cookiecutter . --no-input
-cd ../..
+cookiecutter . --no-input --output-dir ../src/features
 
 echo "Formateando todo el proyecto."
 npm run lint:fix
