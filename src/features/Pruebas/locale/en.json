@@ -1,0 +1,87 @@
+{
+  "singular": "Prueba",
+  "listing": {
+    "title": "Pruebas"
+  },
+  "details": {
+    "details": "Details"
+  },
+  "fields": {
+    
+    "string": "string",
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
+    "number": "number",
+    
+    "actions": "Actions"
+  },
+  "create": {
+    "title": "New Prueba",
+    "cancelDialog": {
+      "title": "Cancel prueba creation",
+      "content": "Are you sure to cancel this prueba? All the progress will be lost",
+      "confirm": "Continue editing",
+      "cancel": "Exit"
+    }
+  },
+  "edit": {
+    "title": "Edit Prueba",
+    "cancelDialog": {
+      "title": "Cancel prueba edition",
+      "content": "Are you sure to cancel this prueba? All the progress will be lost",
+      "confirm": "Continue editing",
+      "cancel": "Exit"
+    }
+  },
+  "filters": {
+    
+    "string": "string",
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
+    "number": "number",
+    
+    "all": "All"
+  },
+  "form": {
+    "details": "Basic details",
+    "name": "Name",
+    "cancel": "Cancel",
+    
+    "string": "string",
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
+    "number": "number",
+    
+    "saveAndNoActivate": "Save without activation",
+    "saveAndActivate": "Save with activation"
+  },
+  "dialog": {
+    "title": "Action on Backoffice",
+    "content": "Are you sure to action this prueba on p¡p?",
+    "hide": "Deactivate",
+    "unhide": "Activate",
+    "confirm": "Activate",
+    "cancel": "Cancel"
+  }
+}

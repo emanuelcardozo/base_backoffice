@@ -20,11 +20,13 @@ const PokemonList = () => {
 
   const columns = useMemo(
     () => [
-      { header: t('fields.name'), fieldName: 'name', sortable: true },
+      { header: t('fields.date'), fieldName: 'date', sortable: true },
 
-      { header: t('fields.id'), fieldName: 'id', sortable: true },
+      { header: t('fields.time'), fieldName: 'time', sortable: true },
 
-      { header: t('fields.skills'), fieldName: 'skills', sortable: true },
+      { header: t('fields.datetime'), fieldName: 'datetime', sortable: true },
+
+      { header: t('fields.array'), fieldName: 'array', sortable: true },
     ],
     [t]
   )

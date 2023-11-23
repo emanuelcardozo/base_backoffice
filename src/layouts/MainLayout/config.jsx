@@ -36,8 +36,8 @@ export const itemsGroupCommonUser = [
 
   // automatic generated menu items
   {
-    title: 'Hijos',
-    path: '/hijos',
+    title: 'Holas',
+    path: '/holas',
     icon: (
       <SvgIcon fontSize="small">
         <TagIcon />
@@ -47,6 +47,24 @@ export const itemsGroupCommonUser = [
   {
     title: 'Pokemones',
     path: '/pokemones',
+    icon: (
+      <SvgIcon fontSize="small">
+        <TagIcon />
+      </SvgIcon>
+    ),
+  },
+  {
+    title: 'Rpuebas33',
+    path: '/rpuebas33',
+    icon: (
+      <SvgIcon fontSize="small">
+        <TagIcon />
+      </SvgIcon>
+    ),
+  },
+  {
+    title: 'Pruebas',
+    path: '/pruebas',
     icon: (
       <SvgIcon fontSize="small">
         <TagIcon />

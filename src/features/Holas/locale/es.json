@@ -1,0 +1,75 @@
+{
+  "singular": "Hola",
+  "listing": {
+    "title": "Holas"
+  },
+  "details": {
+    "details": "Detalles"
+  },
+  "fields": {
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
+    "actions": "Acciones"
+  },
+  "create": {
+    "title": "Nueva Hola",
+    "cancelDialog": {
+      "title": "Cancelar creación de hola",
+      "content": "Estás seguro que deseas cancelar la creación? Todo el progreso se perderá",
+      "confirm": "Continuar editando",
+      "cancel": "Salir"
+    }
+  },
+  "edit": {
+    "title": "Editar Categoría",
+    "cancelDialog": {
+      "title": "Cancelar edición de hola",
+      "content": "Estás seguro que deseas cancelar la edición? Todo el progreso se perderá",
+      "confirm": "Continuar editando",
+      "cancel": "Salir"
+    }
+  },
+  "filters": {
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
+    "all": "Todos"
+  },
+  "form": {
+    "details": "Detalles básicos",
+    "name": "Nombre",
+    "cancel": "Cancelar",
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
+    "saveAndNoActivate": "Guardar sin activar",
+    "saveAndActivate": "Guardar y activar"
+  },
+  "dialog": {
+    "title": "Acción en Backoffice",
+    "content": "¿Confirma que desea Acción la hola en p¡p?",
+    "hide": "Desactivar",
+    "unhide": "Activar",
+    "confirm": "Desactivar",
+    "cancel": "Cancelar"
+  }
+}

@@ -7,10 +7,16 @@
     "details": "Details"
   },
   "fields": {
-    "id": "Id",
-    "name": "Name",
-    "active": "Active",
-    "createdAt": "Created at"
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
+    "actions": "Actions"
   },
   "create": {
     "title": "New Pokemon",
@@ -31,14 +37,30 @@
     }
   },
   "filters": {
-    "name": "Name",
-    "active": "Active",
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
     "all": "All"
   },
   "form": {
     "details": "Basic details",
     "name": "Name",
     "cancel": "Cancel",
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
     "saveAndNoActivate": "Save without activation",
     "saveAndActivate": "Save with activation"
   },

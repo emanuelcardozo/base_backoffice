@@ -1,0 +1,75 @@
+{
+  "singular": "Hola",
+  "listing": {
+    "title": "Holas"
+  },
+  "details": {
+    "details": "Details"
+  },
+  "fields": {
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
+    "actions": "Actions"
+  },
+  "create": {
+    "title": "New Hola",
+    "cancelDialog": {
+      "title": "Cancel hola creation",
+      "content": "Are you sure to cancel this hola? All the progress will be lost",
+      "confirm": "Continue editing",
+      "cancel": "Exit"
+    }
+  },
+  "edit": {
+    "title": "Edit Hola",
+    "cancelDialog": {
+      "title": "Cancel hola edition",
+      "content": "Are you sure to cancel this hola? All the progress will be lost",
+      "confirm": "Continue editing",
+      "cancel": "Exit"
+    }
+  },
+  "filters": {
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
+    "all": "All"
+  },
+  "form": {
+    "details": "Basic details",
+    "name": "Name",
+    "cancel": "Cancel",
+    
+    "date": "date",
+    
+    "time": "time",
+    
+    "datetime": "datetime",
+    
+    "array": "array",
+    
+    "saveAndNoActivate": "Save without activation",
+    "saveAndActivate": "Save with activation"
+  },
+  "dialog": {
+    "title": "Action on Backoffice",
+    "content": "Are you sure to action this hola on p¡p?",
+    "hide": "Deactivate",
+    "unhide": "Activate",
+    "confirm": "Activate",
+    "cancel": "Cancel"
+  }
+}

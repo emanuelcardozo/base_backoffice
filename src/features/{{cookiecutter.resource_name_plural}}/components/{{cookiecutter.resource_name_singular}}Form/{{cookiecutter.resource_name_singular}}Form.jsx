@@ -2,12 +2,28 @@ import { useCallback, useMemo, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 import CardFormBlock from 'components/CardFormBlock/CardFormBlock'
-import { Stack, TextField, Button } from '@mui/material'
-import { LoadingButton } from '@mui/lab'
 import { useFormik } from 'formik'
+import { Stack, Button } from '@mui/material'
+import { LoadingButton } from '@mui/lab'
+{% if cookiecutter.__fields|selectattr("type", "equalto", "string")|list|length %}
+import TextField from '@mui/material/TextField'
+{% endif %}
+{% if cookiecutter.__fields|selectattr("type", "equalto", "date")|list|length %}
+import DatePicker from 'components/DatePicker'
+{% endif %}
+{% if cookiecutter.__fields|selectattr("type", "equalto", "time")|list|length %}
+import TimePicker from 'components/TimePicker'
+{% endif %}
+{% if cookiecutter.__fields|selectattr("type", "equalto", "datetime")|list|length %}
+import DateTimePicker from 'components/DateTimePicker'
+{% endif %}
+{% if cookiecutter.__fields|selectattr("type", "equalto", "array")|list|length %}
+import Autocomplete from 'components/Autocomplete'
+{% endif %}
 import {{cookiecutter.resource_name_singular}}Schema from 'features/{{cookiecutter.resource_name_plural}}/schema/{{cookiecutter.resource_name_singular}}Schema'
 
-const direction = { xs: 'column-reverse', sm: 'row' }
+const DEFAULT_DIRECTION = { xs: 'column-reverse', sm: 'row' }
+const DEFAULT_SLOTPROPS = { textField: { fullWidth: true } }
 
 const EMPTY_{{cookiecutter.resource_name_singular|upper}} = {
   {% for field in cookiecutter.__fields %}
@@ -68,10 +84,44 @@ function {{cookiecutter.resource_name_singular}}Form({ onCancel, onSubmit, initi
       <Stack spacing={3} sx={styles}>
         <CardFormBlock title={t('details')}>
           {% for field in cookiecutter.__fields %}
-            <TextField fullWidth label={t('{{field.name}}')} {...getFieldProps('{{field.name}}')} />
+            {% if field.type == "date" %}
+              <DatePicker
+                label={t('{{field.name}}')}
+                slotProps={DEFAULT_SLOTPROPS}
+                {...getFieldProps('{{field.name}}')}
+                onChange={(date) => setFieldValue('{{field.name}}', date)}
+              />
+            {% elif field.type == "datetime" %}
+              <DateTimePicker
+                label={t('{{field.name}}')}
+                slotProps={DEFAULT_SLOTPROPS}
+                {...getFieldProps('{{field.name}}')}
+                onChange={(date) => setFieldValue('{{field.name}}', date)}
+              />
+            {% elif field.type == "time" %}
+              <TimePicker
+                label={t('{{field.name}}')}
+                slotProps={DEFAULT_SLOTPROPS}
+                {...getFieldProps('{{field.name}}')}
+                onChange={(date) => setFieldValue('{{field.name}}', date)}
+              />
+            {% elif field.type == "array" %}
+              <Autocomplete
+                label={t('{{field.name}}')}
+                resourceName="{{field.name}}"
+                {...getFieldProps('{{field.name}}')}
+                onChange={(e, value) => {
+                  setFieldValue('{{field.name}}', value)
+                }}
+                multiple
+                limitTags={2}
+              />
+            {% else %}
+              <TextField fullWidth label={t('{{field.name}}')} {...getFieldProps('{{field.name}}')} />
+            {% endif %}
           {% endfor %}
         </CardFormBlock>
-        <Stack direction={direction} spacing={3} justifyContent="flex-end">
+        <Stack direction={DEFAULT_DIRECTION} spacing={3} justifyContent="flex-end">
           <Button size="large" variant="text" onClick={onCancel}>
             {t('cancel')}
           </Button>
@@ -118,7 +168,7 @@ function {{cookiecutter.resource_name_singular}}Form({ onCancel, onSubmit, initi
   initialValues: PropTypes.object,
   mode: PropTypes.string,
   isLoading: PropTypes.bool,
-  isSubmitting: PropTypes.boo
+  isSubmitting: PropTypes.bool
 }
 
 export default {{cookiecutter.resource_name_singular}}Form

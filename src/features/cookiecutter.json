@@ -1,9 +1,10 @@
 {
-    "resource_name_plural": "Hijos",
-    "resource_name_singular": "Hijo",
+    "resource_name_plural": "Holas",
+    "resource_name_singular": "Hola",
     "__fields": [
-        {"name":"nombre","type":"string"},
-        {"name":"edad","type":"number"},
-        {"name":"fecha_nacimiento","type":"date"}
+        {"name":"date","type":"date"},
+        {"name":"time","type":"time"},
+        {"name":"datetime","type":"datetime"},
+        {"name":"array","type":"array"}
     ]
 }

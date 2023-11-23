@@ -16,8 +16,10 @@ get_field_type() {
         2) echo "string" ;;
         3) echo "bool" ;;
         4) echo "date" ;;
-        5) echo "object" ;;
-        6) echo "array" ;;
+        5) echo "time" ;;
+        6) echo "datetime" ;;
+        7) echo "object" ;;
+        8) echo "array" ;;
         *) echo "unknown" ;;
     esac
 }
@@ -28,7 +30,7 @@ while true; do
     if [ -z "$field" ]; then
         break
     else
-        read -p "Ingrese elija el tipo del campo (1-Number, 2-String, 3-Boolean, 4-Date, 5-Object, 6-Array): " field_type_number
+        read -p "Ingrese elija el tipo del campo (1-Number, 2-String, 3-Boolean, 4-Date, 5-Time, 6-DateTime, 7-Object, 8-Array): " field_type_number
         field_type=$(get_field_type "$field_type_number")
         fields+=("{\"name\":\"$field\",\"type\":\"$field_type\"}")
     fi

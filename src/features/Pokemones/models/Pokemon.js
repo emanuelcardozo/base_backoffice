@@ -1,16 +1,20 @@
 class Pokemon {
   constructor(
-    name,
+    date,
 
-    id,
+    time,
 
-    skills
+    datetime,
+
+    array
   ) {
-    this.name = name
+    this.date = date
 
-    this.id = id
+    this.time = time
 
-    this.skills = skills
+    this.datetime = datetime
+
+    this.array = array
   }
 
   static fromAPI(data = {}) {
