@@ -5,8 +5,6 @@ import enJSON from './locale/en.json'
 import esJSON from './locale/es.json'
 
 // Features
-import esCategoriesJSON from 'features/Categories/locale/es.json'
-import enCategoriesJSON from 'features/Categories/locale/en.json'
 
 i18n
   .use(LanguageDetector)
@@ -32,12 +30,5 @@ i18n.services.formatter.add('lowercase', (value) => {
 })
 
 // add more resources here
-i18n.addResourceBundle('es', 'features', {
-  Categories: esCategoriesJSON,
-})
-
-i18n.addResourceBundle('en', 'features', {
-  Categories: enCategoriesJSON,
-})
 
 export default i18n

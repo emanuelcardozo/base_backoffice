@@ -4,7 +4,6 @@ import MainLayout from 'layouts/MainLayout'
 import AuthLayout from 'layouts/AuthLayout'
 
 // routes
-import CategoriesRoutes from 'features/categories/routes'
 import ErrorRoutes from 'features/Errors/routes'
 
 import AuthRoutes from './features/Auth/routes'
@@ -20,7 +19,6 @@ const MainRoutes = {
   ),
   children: [
     // add yours features route here
-    ...CategoriesRoutes,
   ],
 }
 
