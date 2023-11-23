@@ -7,14 +7,6 @@ import esJSON from './locale/es.json'
 import esCategoriesJSON from 'features/Categories/locale/es.json'
 import enCategoriesJSON from 'features/Categories/locale/en.json'
 // Features
-import esHolasJSON from 'features/Holas/locale/es.json'
-import enHolasJSON from 'features/Holas/locale/en.json'
-import esPokemonesJSON from 'features/Pokemones/locale/es.json'
-import enPokemonesJSON from 'features/Pokemones/locale/en.json'
-import esRpuebas33JSON from 'features/Rpuebas33/locale/es.json'
-import enRpuebas33JSON from 'features/Rpuebas33/locale/en.json'
-import esPruebasJSON from 'features/Pruebas/locale/es.json'
-import enPruebasJSON from 'features/Pruebas/locale/en.json'
 
 i18n
   .use(LanguageDetector)
@@ -48,36 +40,5 @@ i18n.addResourceBundle('es', 'features', {
 })
 
 // add more resources here
-i18n.addResourceBundle('es', 'features', {
-  Holas: esHolasJSON,
-})
-
-i18n.addResourceBundle('en', 'features', {
-  Holas: enHolasJSON,
-})
-
-i18n.addResourceBundle('es', 'features', {
-  Pokemones: esPokemonesJSON,
-})
-
-i18n.addResourceBundle('en', 'features', {
-  Pokemones: enPokemonesJSON,
-})
-
-i18n.addResourceBundle('es', 'features', {
-  Rpuebas33: esRpuebas33JSON,
-})
-
-i18n.addResourceBundle('en', 'features', {
-  Rpuebas33: enRpuebas33JSON,
-})
-
-i18n.addResourceBundle('es', 'features', {
-  Pruebas: esPruebasJSON,
-})
-
-i18n.addResourceBundle('en', 'features', {
-  Pruebas: enPruebasJSON,
-})
 
 export default i18n
