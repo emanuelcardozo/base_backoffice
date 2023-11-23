@@ -12,7 +12,7 @@ export default function useDelete{{cookiecutter.resource_name_singular}}() {
 
   const onRemove = useCallback(
     (id) => {
-      doFetch({ url: `${config.api.ms{{cookiecutter.resource_name_plural}}.baseUrl}/{{cookiecutter.resource_name_plural}}/${id}`, method: 'DELETE' })
+      doFetch({ url: `${config.api.ms{{cookiecutter.resource_name_plural}}.baseUrl}/{{cookiecutter.resource_name_plural|lower}}/${id}`, method: 'DELETE' })
     },
     [doFetch]
   )

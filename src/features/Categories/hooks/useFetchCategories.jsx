@@ -1,26 +1,26 @@
 import { useEffect, useState } from 'react'
 import usePaginatedFetch from 'hooks/usePaginatedFetch'
 import config from 'config'
-import { {{cookiecutter.resource_name_singular|lower}}FromAPI } from '../transformers'
+import { categoryFromAPI } from '../transformers'
 import { useTranslation } from 'react-i18next'
 import { useSnackbar } from 'notistack'
 import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
 
-export default function useFetch{{cookiecutter.resource_name_plural}}(filters) {
+export default function useFetchCategories(filters) {
   const { t } = useTranslation()
   const { closeSnackbar, enqueueSnackbar } = useSnackbar()
-  const [{{cookiecutter.resource_name_plural|lower}}, set{{cookiecutter.resource_name_plural}}] = useState(null)
+  const [categories, setCategories] = useState(null)
   const { doFetch, response, paginator, loading, error, retry } = usePaginatedFetch({
-    url: `${config.api.ms{{cookiecutter.resource_name_plural}}.baseUrl}/{{cookiecutter.resource_name_plural|lower}}`,
+    url: `${config.api.msCategories.baseUrl}/categories`,
     filters,
   })
 
   useEffect(() => {
     if (!response) return
 
-    const {{cookiecutter.resource_name_plural|lower}} = response.data.map(({{cookiecutter.resource_name_singular|lower}}) => {{cookiecutter.resource_name_singular|lower}}FromAPI({{cookiecutter.resource_name_singular|lower}}, t))
+    const categories = response.data.map((category) => categoryFromAPI(category, t))
 
-    set{{cookiecutter.resource_name_plural}}({{cookiecutter.resource_name_plural|lower}})
+    setCategories(categories)
   }, [response, t])
 
   useEffect(() => {
@@ -44,5 +44,5 @@ export default function useFetch{{cookiecutter.resource_name_plural}}(filters) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error, t])
 
-  return { {{cookiecutter.resource_name_plural|lower}}, paginator, loading, error, refresh: retry }
+  return { categories, paginator, loading, error, refresh: retry }
 }

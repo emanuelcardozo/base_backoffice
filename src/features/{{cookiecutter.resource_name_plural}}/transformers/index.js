@@ -1,7 +1,6 @@
-import moment from 'moment'
 import {{cookiecutter.resource_name_singular}} from '../models/{{cookiecutter.resource_name_singular}}.js'
 
-const {{cookiecutter.resource_name_singular|lower}}FromAPI = (data, t) => {
+const {{cookiecutter.resource_name_singular|lower}}FromAPI = (data) => {
   return {{cookiecutter.resource_name_singular}}.fromAPI(data)
 }
 

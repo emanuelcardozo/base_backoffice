@@ -4,14 +4,14 @@ import { useTranslation } from 'react-i18next'
 import config from 'src/config.js'
 import useFetch from 'hooks/useFetch.js'
 
-export default function use{{cookiecutter.resource_name_singular}}ConfirmDialog(refresh) {
-  const { t } = useTranslation('features', { keyPrefix: '{{cookiecutter.resource_name_plural}}' })
+export default function useCategoryConfirmDialog(refresh) {
+  const { t } = useTranslation('features', { keyPrefix: 'Categories' })
   const confirm = useConfirm()
   const { doFetch } = useFetch()
 
   const onClickOpenConfirm = useCallback(
-    ({{cookiecutter.resource_name_singular|lower}}) => {
-      const action = {{cookiecutter.resource_name_singular|lower}}?.hidden ? 'unhide' : 'hide'
+    (category) => {
+      const action = category?.hidden ? 'unhide' : 'hide'
 
       confirm({
         title: t('dialog.title', { action: t(`dialog.${action}`) }),
@@ -22,9 +22,9 @@ export default function use{{cookiecutter.resource_name_singular}}ConfirmDialog(
         .then(() => {
           doFetch({
             method: 'PATCH',
-            url: `${config.api.ms{{cookiecutter.resource_name_plural}}.baseUrl}/{{cookiecutter.resource_name_plural|lower}}/${ {{cookiecutter.resource_name_singular|lower}}.id }`,
+            url: `${config.api.msCategories.baseUrl}/categories/${category.id}`,
             data: {
-              active: {{cookiecutter.resource_name_singular|lower}}?.hidden,
+              active: category?.hidden,
             },
           }).then(refresh)
         })

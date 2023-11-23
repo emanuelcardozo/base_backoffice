@@ -1,0 +1,69 @@
+{
+  "singular": "Category",
+  "listing": {
+    "title": "Categories"
+  },
+  "details": {
+    "details": "Detalles"
+  },
+  "fields": {
+    
+    "id": "id",
+    
+    "name": "name",
+    
+    "active": "active",
+    
+    "actions": "Acciones"
+  },
+  "create": {
+    "title": "Nueva Category",
+    "cancelDialog": {
+      "title": "Cancelar creación de category",
+      "content": "Estás seguro que deseas cancelar la creación? Todo el progreso se perderá",
+      "confirm": "Continuar editando",
+      "cancel": "Salir"
+    }
+  },
+  "edit": {
+    "title": "Editar Categoría",
+    "cancelDialog": {
+      "title": "Cancelar edición de category",
+      "content": "Estás seguro que deseas cancelar la edición? Todo el progreso se perderá",
+      "confirm": "Continuar editando",
+      "cancel": "Salir"
+    }
+  },
+  "filters": {
+    
+    "id": "id",
+    
+    "name": "name",
+    
+    "active": "active",
+    
+    "all": "Todos"
+  },
+  "form": {
+    "details": "Detalles básicos",
+    "name": "Nombre",
+    "cancel": "Cancelar",
+    
+    "id": "id",
+    
+    "name": "name",
+    
+    "active": "active",
+    
+    "saveAndNoActivate": "Guardar sin activar",
+    "saveAndActivate": "Guardar y activar"
+  },
+  "dialog": {
+    "title": "Acción en Backoffice",
+    "content": "¿Confirma que desea Acción la category en p¡p?",
+    "hide": "Desactivar",
+    "unhide": "Activar",
+    "confirm": "Desactivar",
+    "cancel": "Cancelar"
+  }
+}

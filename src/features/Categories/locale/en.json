@@ -1,0 +1,69 @@
+{
+  "singular": "Category",
+  "listing": {
+    "title": "Categories"
+  },
+  "details": {
+    "details": "Details"
+  },
+  "fields": {
+    
+    "id": "id",
+    
+    "name": "name",
+    
+    "active": "active",
+    
+    "actions": "Actions"
+  },
+  "create": {
+    "title": "New Category",
+    "cancelDialog": {
+      "title": "Cancel category creation",
+      "content": "Are you sure to cancel this category? All the progress will be lost",
+      "confirm": "Continue editing",
+      "cancel": "Exit"
+    }
+  },
+  "edit": {
+    "title": "Edit Category",
+    "cancelDialog": {
+      "title": "Cancel category edition",
+      "content": "Are you sure to cancel this category? All the progress will be lost",
+      "confirm": "Continue editing",
+      "cancel": "Exit"
+    }
+  },
+  "filters": {
+    
+    "id": "id",
+    
+    "name": "name",
+    
+    "active": "active",
+    
+    "all": "All"
+  },
+  "form": {
+    "details": "Basic details",
+    "name": "Name",
+    "cancel": "Cancel",
+    
+    "id": "id",
+    
+    "name": "name",
+    
+    "active": "active",
+    
+    "saveAndNoActivate": "Save without activation",
+    "saveAndActivate": "Save with activation"
+  },
+  "dialog": {
+    "title": "Action on Backoffice",
+    "content": "Are you sure to action this category on p¡p?",
+    "hide": "Deactivate",
+    "unhide": "Activate",
+    "confirm": "Activate",
+    "cancel": "Cancel"
+  }
+}

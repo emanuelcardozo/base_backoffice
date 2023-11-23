@@ -20,10 +20,11 @@ import DateTimePicker from 'components/DateTimePicker'
 {% if cookiecutter.__fields|selectattr("type", "equalto", "array")|list|length %}
 import Autocomplete from 'components/Autocomplete'
 {% endif %}
+{% if cookiecutter.__fields|selectattr("type", "equalto", "bool")|list|length %}
+import Switch from '@mui/material/Switch'
+import FormControlLabel from '@mui/material/FormControlLabel'
+{% endif %}
 import {{cookiecutter.resource_name_singular}}Schema from 'features/{{cookiecutter.resource_name_plural}}/schema/{{cookiecutter.resource_name_singular}}Schema'
-
-const DEFAULT_DIRECTION = { xs: 'column-reverse', sm: 'row' }
-const DEFAULT_SLOTPROPS = { textField: { fullWidth: true } }
 
 const EMPTY_{{cookiecutter.resource_name_singular|upper}} = {
   {% for field in cookiecutter.__fields %}
@@ -87,21 +88,21 @@ function {{cookiecutter.resource_name_singular}}Form({ onCancel, onSubmit, initi
             {% if field.type == "date" %}
               <DatePicker
                 label={t('{{field.name}}')}
-                slotProps={DEFAULT_SLOTPROPS}
+                slotProps={ { textField: { fullWidth: true } } }
                 {...getFieldProps('{{field.name}}')}
                 onChange={(date) => setFieldValue('{{field.name}}', date)}
               />
             {% elif field.type == "datetime" %}
               <DateTimePicker
                 label={t('{{field.name}}')}
-                slotProps={DEFAULT_SLOTPROPS}
+                slotProps={ { textField: { fullWidth: true } } }
                 {...getFieldProps('{{field.name}}')}
                 onChange={(date) => setFieldValue('{{field.name}}', date)}
               />
             {% elif field.type == "time" %}
               <TimePicker
                 label={t('{{field.name}}')}
-                slotProps={DEFAULT_SLOTPROPS}
+                slotProps={ { textField: { fullWidth: true } } }
                 {...getFieldProps('{{field.name}}')}
                 onChange={(date) => setFieldValue('{{field.name}}', date)}
               />
@@ -116,12 +117,23 @@ function {{cookiecutter.resource_name_singular}}Form({ onCancel, onSubmit, initi
                 multiple
                 limitTags={2}
               />
+            {% elif field.type == "bool" %}
+              <FormControlLabel
+                control={
+                  <Switch
+                    onChange={(e, checked) => setFieldValue('{{field.name}}', checked)}
+                    color="primary"
+                    checked={values.{{field.name}}}
+                  />
+                }
+                label={t('{{field.name}}')}
+              />
             {% else %}
               <TextField fullWidth label={t('{{field.name}}')} {...getFieldProps('{{field.name}}')} />
             {% endif %}
           {% endfor %}
         </CardFormBlock>
-        <Stack direction={DEFAULT_DIRECTION} spacing={3} justifyContent="flex-end">
+        <Stack direction={ { xs: 'column-reverse', sm: 'row' } } spacing={3} justifyContent="flex-end">
           <Button size="large" variant="text" onClick={onCancel}>
             {t('cancel')}
           </Button>

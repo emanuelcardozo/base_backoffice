@@ -1,25 +1,18 @@
-import { useCallback, useEffect } from 'react'
+import { useEffect, useCallback } from 'react'
+import config from 'config'
 import { useTranslation } from 'react-i18next'
 import { useSnackbar } from 'notistack'
-import useFetch from 'hooks/useFetch'
-import config from 'config'
 import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
-import { useNavigate } from 'react-router-dom'
+import useFetch from 'hooks/useFetch'
 
-export default function use{{cookiecutter.resource_name_singular}}Creation() {
+export default function useDeleteCategory() {
   const { t } = useTranslation()
-  const navigate = useNavigate()
-  const { response, doFetch, loading, error } = useFetch(
-    `${config.api.ms{{cookiecutter.resource_name_plural}}.baseUrl}/{{cookiecutter.resource_name_plural|lower}}`,
-    {
-      method: 'POST',
-    }
-  )
   const { closeSnackbar, enqueueSnackbar } = useSnackbar()
+  const { doFetch, response, loading, error, retry } = useFetch(null)
 
-  const onSubmit = useCallback(
-    (data) => {
-      doFetch({ data })
+  const onRemove = useCallback(
+    (id) => {
+      doFetch({ url: `${config.api.msCategories.baseUrl}/categories/${id}`, method: 'DELETE' })
     },
     [doFetch]
   )
@@ -27,14 +20,7 @@ export default function use{{cookiecutter.resource_name_singular}}Creation() {
   useEffect(() => {
     if (!response) return
 
-    navigate('/{{cookiecutter.resource_name_plural|lower}}')
-
-    const message = t('createdSuccessfully', {
-      name: response.data.name,
-      type: t('features:{{cookiecutter.resource_name_plural}}:singular'),
-    })
-
-    enqueueSnackbar(message, {
+    enqueueSnackbar('Deleted Succesfully', {
       preventDuplicate: false,
       variant: 'success',
     })
@@ -62,5 +48,5 @@ export default function use{{cookiecutter.resource_name_singular}}Creation() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error, t])
 
-  return { onSubmit, loading }
+  return { onRemove, loading, error, refresh: retry }
 }

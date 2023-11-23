@@ -10,7 +10,7 @@ export default function use{{cookiecutter.resource_name_singular}}Edition(id) {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const { response, doFetch, loading, error } = useFetch(
-    `${config.api.msStores.baseUrl}/{{cookiecutter.resource_name_plural|lower}}/${id}`,
+    `${config.api.ms{{cookiecutter.resource_name_plural}}.baseUrl}/{{cookiecutter.resource_name_plural|lower}}/${id}`,
     {
       method: 'PATCH',
     }

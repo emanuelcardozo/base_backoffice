@@ -4,13 +4,13 @@ import { useSnackbar } from 'notistack'
 import useFetch from 'hooks/useFetch'
 import config from 'config'
 import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
-import { {{cookiecutter.resource_name_singular|lower}}FromAPI } from '../transformers'
+import { categoryFromAPI } from '../transformers'
 
-export default function useFetch{{cookiecutter.resource_name_singular}}Detail(id) {
-  const [{{cookiecutter.resource_name_singular|lower}}, set{{cookiecutter.resource_name_singular}}] = useState()
+export default function useFetchCategoryDetail(id) {
+  const [category, setCategory] = useState()
   const { t } = useTranslation('common')
   const { response, doFetch, loading, error } = useFetch(
-    `${config.api.ms{{cookiecutter.resource_name_plural}}.baseUrl}/{{cookiecutter.resource_name_plural|lower}}/${id}`
+    `${config.api.msCategories.baseUrl}/categories/${id}`
   )
   const { closeSnackbar, enqueueSnackbar } = useSnackbar()
 
@@ -22,7 +22,7 @@ export default function useFetch{{cookiecutter.resource_name_singular}}Detail(id
   useEffect(() => {
     if (!response) return
 
-    set{{cookiecutter.resource_name_singular}}({{cookiecutter.resource_name_singular|lower}}FromAPI(response.data, t))
+    setCategory(categoryFromAPI(response.data, t))
   }, [response, t])
 
   useEffect(() => {
@@ -46,5 +46,5 @@ export default function useFetch{{cookiecutter.resource_name_singular}}Detail(id
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error, t])
 
-  return { {{cookiecutter.resource_name_singular|lower}}, loading, error }
+  return { category, loading, error }
 }

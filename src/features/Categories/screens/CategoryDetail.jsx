@@ -12,25 +12,21 @@ import {
 } from '@mui/material'
 import SectionBackButton from 'components/SectionBackButton'
 import LoadingValue from 'components/LoadingValue'
-import useFetch{{cookiecutter.resource_name_singular}}Detail from '../hooks/useFetch{{cookiecutter.resource_name_singular}}Detail'
+import useFetchCategoryDetail from '../hooks/useFetchCategoryDetail'
 
-const BASIC_DETAILS_FIELDS = [
-  {% for field in cookiecutter.__fields %}
-    "{{field.name}}",
-  {% endfor %}
-]
+const BASIC_DETAILS_FIELDS = ['id', 'name', 'active']
 const style = { width: '100%', maxWidth: 360, bgcolor: 'background.paper' }
 
-export default function {{cookiecutter.resource_name_singular}}Detail() {
+export default function CategoryDetail() {
   const { id } = useParams()
-  const { t } = useTranslation('features', { keyPrefix: '{{cookiecutter.resource_name_plural}}' })
-  const { {{cookiecutter.resource_name_singular|lower}}, loading } = useFetch{{cookiecutter.resource_name_singular}}Detail(id)
-  const isLoading = loading || {{cookiecutter.resource_name_singular|lower}} === null
+  const { t } = useTranslation('features', { keyPrefix: 'Categories' })
+  const { category, loading } = useFetchCategoryDetail(id)
+  const isLoading = loading || category === null
 
   return (
     <Container maxWidth="xl">
       <Stack spacing={3}>
-        <SectionBackButton label={t('listing.title')} to="/{{cookiecutter.resource_name_plural|lower}}" />
+        <SectionBackButton label={t('listing.title')} to="/categories" />
         <Card>
           <CardHeader title={t('details.details')} />
           <CardContent pt={0}>
@@ -39,7 +35,7 @@ export default function {{cookiecutter.resource_name_singular}}Detail() {
                 <ListItem key={fieldName} disableGutters>
                   <ListItemText
                     primary={t(`fields.${fieldName}`)}
-                    secondary={<LoadingValue loading={isLoading} value={({{cookiecutter.resource_name_singular|lower}})?.[fieldName]} />}
+                    secondary={<LoadingValue loading={isLoading} value={category?.[fieldName]} />}
                   />
                 </ListItem>
               ))}

@@ -1,13 +1,9 @@
 {
-    "resource_name_plural": "Campaigns",
-    "resource_name_singular": "Campaign",
+    "resource_name_plural": "Categories",
+    "resource_name_singular": "Category",
     "__fields": [
-        {"name":"mall","type":"array"},
-        {"name":"title","type":"string"},
-        {"name":"description","type":"string"},
-        {"name":"dateFrom","type":"date"},
-        {"name":"hourFrom","type":"time"},
-        {"name":"dateTo","type":"date"},
-        {"name":"hourTo","type":"time"}
+        {"name":"id","type":"number"},
+        {"name":"name","type":"string"},
+        {"name":"active","type":"bool"}
     ]
 }
