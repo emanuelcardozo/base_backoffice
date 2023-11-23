@@ -1,11 +1,11 @@
 import * as Yup from 'yup'
 
 const CategoryFilterSchema = Yup.object({
-  id: Yup.number().required('validations:required'),
+  id: Yup.number().nullable(),
 
-  name: Yup.string().required('validations:required'),
+  name: Yup.string().nullable(),
 
-  active: Yup.bool().required('validations:required'),
+  active: Yup.bool().nullable(),
 })
 
 export default CategoryFilterSchema

@@ -1,1 +1,1 @@
-export { default } from './CategoriesFilters.js'
+export { default } from './CategoriesFilters.jsx'

@@ -1,15 +1,22 @@
 import PropTypes from 'prop-types'
-import { TextField } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useCallback } from 'react'
 import { useFormik } from 'formik'
 import CategoryFilterSchema from 'features/Categories/schema/CategoryFilterSchema'
 import Filters from 'components/Filters/index.js'
-import { useMemo } from 'react'
-import entitiesToOptions from 'utils/entityToOptions.js'
-import Select from 'components/Select'
 
-const emptyValue = { name: t('all'), value: null }
+import TextField from '@mui/material/TextField'
+
+import Switch from '@mui/material/Switch'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const EMPTY_CATEGORY_FILTERS = {
+  id: null,
+
+  name: '',
+
+  active: null,
+}
 
 const CategoryFilters = ({ open, onCancel, onApply, initialFilters }) => {
   const { t } = useTranslation('features', { keyPrefix: 'Categories.filters' })
@@ -32,33 +39,28 @@ const CategoryFilters = ({ open, onCancel, onApply, initialFilters }) => {
     [handleChange, values]
   )
 
-  const ACTIVE_OPTIONS = useMemo(
-    () => [
-      { id: true, name: t('common:Yes') },
-      { id: false, name: t('common:No') },
-    ],
-    [t]
-  )
-
   return (
     <Filters open={open} onCancel={onCancel} onApply={handleSubmit} onClear={handleClear}>
-      <TextField label={t('name')} fullWidth {...getFieldProps('name')} />
-      <Select
+      <TextField fullWidth type="number" label={t('id')} {...getFieldProps('id')} />
+
+      <TextField fullWidth label={t('name')} {...getFieldProps('name')} />
+
+      <FormControlLabel
+        control={
+          <Switch
+            onChange={(e, checked) => setFieldValue('active', checked)}
+            color="primary"
+            checked={values.active}
+          />
+        }
         label={t('active')}
-        options={entitiesToOptions(ACTIVE_OPTIONS)}
-        fullWidth
-        emptyValue={emptyValue}
-        {...getFieldProps('active')}
       />
     </Filters>
   )
 }
 
 CategoryFilters.defaultProps = {
-  initialFilters: {
-    name: '',
-    active: '',
-  },
+  initialFilters: EMPTY_CATEGORY_FILTERS,
 }
 
 CategoryFilters.propTypes = {

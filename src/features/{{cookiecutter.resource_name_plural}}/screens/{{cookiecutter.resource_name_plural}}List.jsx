@@ -7,13 +7,12 @@ import {{cookiecutter.resource_name_plural}}Table from '../components/{{cookiecu
 import { useNavigate } from 'react-router-dom'
 import useFilters from 'hooks/useFilters.js'
 import useDelete{{cookiecutter.resource_name_singular}} from '../hooks/useDelete{{cookiecutter.resource_name_singular}}'
-// import {{cookiecutter.resource_name_plural}}Filters from '../components/{{cookiecutter.resource_name_plural}}Filters'
+import {{cookiecutter.resource_name_plural}}Filters from '../components/{{cookiecutter.resource_name_plural}}Filters'
 
 const {{cookiecutter.resource_name_singular}}List = () => {
   const navigate = useNavigate()
   const { t } = useTranslation('features', { keyPrefix: '{{cookiecutter.resource_name_plural}}' })
-  // const { isOpenFilters, openFilters, onCancel, onApply, count, filters } = useFilters()
-  const { filters } = useFilters()
+  const { isOpenFilters, openFilters, onCancel, onApply, count, filters } = useFilters()
   const { {{cookiecutter.resource_name_plural|lower}}, paginator, loading, refresh } = useFetch{{cookiecutter.resource_name_plural}}(filters)
   const { onRemove } = useDelete{{cookiecutter.resource_name_singular}}(refresh)
   const { total, page, setPage, perPage, setPerPage } = paginator
@@ -39,10 +38,10 @@ const {{cookiecutter.resource_name_singular}}List = () => {
           title={t('listing.title')}
           showAddButton
           onClickAddButton={handleClickAdd}
-          // onClickFilterButton={openFilters}
-          // filtersCount={count}
+          onClickFilterButton={openFilters}
+          filtersCount={count}
         />
-        {/* <{{cookiecutter.resource_name_plural}}Filters open={isOpenFilters} onCancel={onCancel} onApply={onApply} /> */}
+        <{{cookiecutter.resource_name_plural}}Filters open={isOpenFilters} onCancel={onCancel} onApply={onApply} />
         <Card>
           <{{cookiecutter.resource_name_plural}}Table
             columns={columns}

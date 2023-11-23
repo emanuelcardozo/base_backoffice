@@ -14,11 +14,11 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import CategorySchema from 'features/Categories/schema/CategorySchema'
 
 const EMPTY_CATEGORY = {
-  id: 0,
+  id: null,
 
   name: '',
 
-  active: false,
+  active: null,
 }
 
 function CategoryForm({ onCancel, onSubmit, initialValues, mode, isLoading, isSubmitting }) {
@@ -73,7 +73,7 @@ function CategoryForm({ onCancel, onSubmit, initialValues, mode, isLoading, isSu
     <form noValidate onSubmit={handleSubmit}>
       <Stack spacing={3} sx={styles}>
         <CardFormBlock title={t('details')}>
-          <TextField fullWidth label={t('id')} {...getFieldProps('id')} />
+          <TextField fullWidth type="number" label={t('id')} {...getFieldProps('id')} />
 
           <TextField fullWidth label={t('name')} {...getFieldProps('name')} />
 

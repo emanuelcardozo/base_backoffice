@@ -7,13 +7,12 @@ import CategoriesTable from '../components/CategoriesTable'
 import { useNavigate } from 'react-router-dom'
 import useFilters from 'hooks/useFilters.js'
 import useDeleteCategory from '../hooks/useDeleteCategory'
-// import CategoriesFilters from '../components/CategoriesFilters'
+import CategoriesFilters from '../components/CategoriesFilters'
 
 const CategoryList = () => {
   const navigate = useNavigate()
   const { t } = useTranslation('features', { keyPrefix: 'Categories' })
-  // const { isOpenFilters, openFilters, onCancel, onApply, count, filters } = useFilters()
-  const { filters } = useFilters()
+  const { isOpenFilters, openFilters, onCancel, onApply, count, filters } = useFilters()
   const { categories, paginator, loading, refresh } = useFetchCategories(filters)
   const { onRemove } = useDeleteCategory(refresh)
   const { total, page, setPage, perPage, setPerPage } = paginator
@@ -41,10 +40,10 @@ const CategoryList = () => {
           title={t('listing.title')}
           showAddButton
           onClickAddButton={handleClickAdd}
-          // onClickFilterButton={openFilters}
-          // filtersCount={count}
+          onClickFilterButton={openFilters}
+          filtersCount={count}
         />
-        {/* <CategoriesFilters open={isOpenFilters} onCancel={onCancel} onApply={onApply} /> */}
+        <CategoriesFilters open={isOpenFilters} onCancel={onCancel} onApply={onApply} />
         <Card>
           <CategoriesTable
             columns={columns}
