@@ -6,11 +6,11 @@ import config from 'config'
 import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
 import { useNavigate } from 'react-router-dom'
 
-export default function useCategoryEdition(id) {
+export default function use{{cookiecutter.resource_name_singular}}Edition(id) {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const { response, doFetch, loading, error } = useFetch(
-    `${config.api.msCategories.baseUrl}/categories/${id}`,
+    `${config.api.msStores.baseUrl}/{{cookiecutter.resource_name_plural|lower}}/${id}`,
     {
       method: 'PATCH',
     }
@@ -27,11 +27,11 @@ export default function useCategoryEdition(id) {
   useEffect(() => {
     if (!response) return
 
-    navigate('/categories')
+    navigate('/{{cookiecutter.resource_name_plural|lower}}')
 
     const message = t('editedSuccessfully', {
       name: response.data.name,
-      type: t('features:{{cookiecutter.resource_name_plural|capitalize}}:singular'),
+      type: t('features:{{cookiecutter.resource_name_plural}}:singular'),
     })
 
     enqueueSnackbar(message, {

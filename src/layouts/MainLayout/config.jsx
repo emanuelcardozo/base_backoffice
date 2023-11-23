@@ -4,15 +4,6 @@ import { SvgIcon } from '@mui/material'
 
 export const itemsGroupAdminUser = [
   {
-    title: 'categories',
-    path: '/categories',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
-  {
     title: 'admin',
     path: '/administrators',
     icon: (
@@ -24,15 +15,5 @@ export const itemsGroupAdminUser = [
 ]
 
 export const itemsGroupCommonUser = [
-  {
-    title: 'categories',
-    path: '/categories',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
-
   // automatic generated menu items
 ]

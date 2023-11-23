@@ -1,10 +1,13 @@
 {
-    "resource_name_plural": "Holas",
-    "resource_name_singular": "Hola",
+    "resource_name_plural": "Campaigns",
+    "resource_name_singular": "Campaign",
     "__fields": [
-        {"name":"date","type":"date"},
-        {"name":"time","type":"time"},
-        {"name":"datetime","type":"datetime"},
-        {"name":"array","type":"array"}
+        {"name":"mall","type":"array"},
+        {"name":"title","type":"string"},
+        {"name":"description","type":"string"},
+        {"name":"dateFrom","type":"date"},
+        {"name":"hourFrom","type":"time"},
+        {"name":"dateTo","type":"date"},
+        {"name":"hourTo","type":"time"}
     ]
 }

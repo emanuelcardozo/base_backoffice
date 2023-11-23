@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import usePaginatedFetch from 'hooks/usePaginatedFetch'
 import config from 'config'
-import { {{cookiecutter.resource_name_singular}}FromAPI } from '../transformers'
+import { {{cookiecutter.resource_name_singular|lower}}FromAPI } from '../transformers'
 import { useTranslation } from 'react-i18next'
 import { useSnackbar } from 'notistack'
 import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
@@ -9,18 +9,18 @@ import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
 export default function useFetch{{cookiecutter.resource_name_plural}}(filters) {
   const { t } = useTranslation()
   const { closeSnackbar, enqueueSnackbar } = useSnackbar()
-  const [{{cookiecutter.resource_name_plural}}, set{{cookiecutter.resource_name_plural}}] = useState(null)
+  const [{{cookiecutter.resource_name_plural|lower}}, set{{cookiecutter.resource_name_plural}}] = useState(null)
   const { doFetch, response, paginator, loading, error, retry } = usePaginatedFetch({
-    url: `${config.api.ms{{cookiecutter.resource_name_plural}}.baseUrl}/{{cookiecutter.resource_name_plural}}`,
+    url: `${config.api.msStores.baseUrl}/{{cookiecutter.resource_name_plural|lower}}`,
     filters,
   })
 
   useEffect(() => {
     if (!response) return
 
-    const {{cookiecutter.resource_name_plural}} = response.data.map(({{cookiecutter.resource_name_singular}}) => {{cookiecutter.resource_name_singular}}FromAPI({{cookiecutter.resource_name_singular}}, t))
+    const {{cookiecutter.resource_name_plural|lower}} = response.data.map(({{cookiecutter.resource_name_singular|lower}}) => {{cookiecutter.resource_name_singular|lower}}FromAPI({{cookiecutter.resource_name_singular|lower}}, t))
 
-    set{{cookiecutter.resource_name_plural}}({{cookiecutter.resource_name_plural}})
+    set{{cookiecutter.resource_name_plural}}({{cookiecutter.resource_name_plural|lower}})
   }, [response, t])
 
   useEffect(() => {
@@ -44,5 +44,5 @@ export default function useFetch{{cookiecutter.resource_name_plural}}(filters) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error, t])
 
-  return { {{cookiecutter.resource_name_plural}}, paginator, loading, error, refresh: retry }
+  return { {{cookiecutter.resource_name_plural|lower}}, paginator, loading, error, refresh: retry }
 }

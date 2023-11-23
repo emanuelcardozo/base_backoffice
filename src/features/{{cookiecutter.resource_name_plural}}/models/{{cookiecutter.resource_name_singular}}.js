@@ -10,7 +10,17 @@ class {{cookiecutter.resource_name_singular}} {
   }
 
   static fromAPI(data = {}) {
-    return new {{cookiecutter.resource_name_singular}}(data)
+    const {
+      {% for field in cookiecutter.__fields %}
+      {{field.name}},
+      {% endfor %}
+    } = data
+
+    return new {{cookiecutter.resource_name_singular}}(
+      {% for field in cookiecutter.__fields %}
+      {{field.name}},
+      {% endfor %}
+    )
   }
 }
 

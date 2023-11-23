@@ -20,13 +20,13 @@ const style = { width: '100%', maxWidth: 360, bgcolor: 'background.paper' }
 export default function {{cookiecutter.resource_name_singular}}Detail() {
   const { id } = useParams()
   const { t } = useTranslation('features', { keyPrefix: '{{cookiecutter.resource_name_plural}}' })
-  const { {{cookiecutter.resource_name_singular}}, loading } = useFetch{{cookiecutter.resource_name_singular}}Detail(id)
-  const isLoading = loading || {{cookiecutter.resource_name_singular}} === null
+  const { {{cookiecutter.resource_name_singular|lower}}, loading } = useFetch{{cookiecutter.resource_name_singular}}Detail(id)
+  const isLoading = loading || {{cookiecutter.resource_name_singular|lower}} === null
 
   return (
     <Container maxWidth="xl">
       <Stack spacing={3}>
-        <SectionBackButton label={t('listing.title')} to="/{{cookiecutter.resource_name_plural}}" />
+        <SectionBackButton label={t('listing.title')} to="/{{cookiecutter.resource_name_plural|lower}}" />
         <Card>
           <CardHeader title={t('details.details')} />
           <CardContent pt={0}>
@@ -35,7 +35,7 @@ export default function {{cookiecutter.resource_name_singular}}Detail() {
                 <ListItem key={fieldName} disableGutters>
                   <ListItemText
                     primary={t(`fields.${fieldName}`)}
-                    secondary={<LoadingValue loading={isLoading} value={({{cookiecutter.resource_name_singular}})?.[fieldName]} />}
+                    secondary={<LoadingValue loading={isLoading} value={({{cookiecutter.resource_name_singular|lower}})?.[fieldName]} />}
                   />
                 </ListItem>
               ))}

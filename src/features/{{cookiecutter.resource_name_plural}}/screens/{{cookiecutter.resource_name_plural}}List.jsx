@@ -14,7 +14,7 @@ const {{cookiecutter.resource_name_singular}}List = () => {
   const { t } = useTranslation('features', { keyPrefix: '{{cookiecutter.resource_name_plural}}' })
   // const { isOpenFilters, openFilters, onCancel, onApply, count, filters } = useFilters()
   const { filters } = useFilters()
-  const { {{cookiecutter.resource_name_plural}}, paginator, loading, refresh } = useFetch{{cookiecutter.resource_name_plural}}(filters)
+  const { {{cookiecutter.resource_name_plural|lower}}, paginator, loading, refresh } = useFetch{{cookiecutter.resource_name_plural}}(filters)
   const { onRemove } = useDelete{{cookiecutter.resource_name_singular}}(refresh)
   const { total, page, setPage, perPage, setPerPage } = paginator
 
@@ -46,7 +46,7 @@ const {{cookiecutter.resource_name_singular}}List = () => {
         <Card>
           <{{cookiecutter.resource_name_plural}}Table
             columns={columns}
-            rows={ {{cookiecutter.resource_name_plural}} }
+            rows={ {{cookiecutter.resource_name_plural|lower}} }
             loading={loading}
             onClickView={handleClickView}
             onClickEdit={handleClickEdit}

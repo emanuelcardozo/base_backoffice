@@ -4,8 +4,6 @@ import { initReactI18next } from 'react-i18next'
 import enJSON from './locale/en.json'
 import esJSON from './locale/es.json'
 
-import esCategoriesJSON from 'features/Categories/locale/es.json'
-import enCategoriesJSON from 'features/Categories/locale/en.json'
 // Features
 
 i18n
@@ -30,15 +28,5 @@ i18n
 i18n.services.formatter.add('lowercase', (value) => {
   return value.toLowerCase()
 })
-
-i18n.addResourceBundle('en', 'features', {
-  Categories: enCategoriesJSON,
-})
-
-i18n.addResourceBundle('es', 'features', {
-  Categories: esCategoriesJSON,
-})
-
-// add more resources here
 
 export default i18n

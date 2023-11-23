@@ -4,7 +4,6 @@ import MainLayout from 'layouts/MainLayout'
 import AuthLayout from 'layouts/AuthLayout'
 
 // routes
-import CategoryRoutes from 'features/Categories/routes'
 import ErrorRoutes from 'features/Errors/routes'
 
 import AuthRoutes from './features/Auth/routes'
@@ -19,7 +18,6 @@ const MainRoutes = {
     </AuthPreLoaders>
   ),
   children: [
-    ...CategoryRoutes,
     // add yours features route here
   ],
 }
