@@ -9,7 +9,8 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext json,js,jsx --fix",
     "format": "prettier .  --write",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "feature:generate": "./scripts/new_feature.sh"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

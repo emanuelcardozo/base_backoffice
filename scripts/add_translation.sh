@@ -3,7 +3,7 @@
 resource_name="$1"
 
 # Archivo JavaScript a modificar
-archivo_js="../src/i18n.js"
+archivo_js="./src/i18n.js"
 
 # Convertir la primera letra a mayúscula
 resource_name_capitalized="$(tr '[:lower:]' '[:upper:]' <<< ${resource_name:0:1})${resource_name:1}"

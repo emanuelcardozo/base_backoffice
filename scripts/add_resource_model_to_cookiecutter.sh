@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Obtener la ubicación del directorio del script actual
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 resource_name_plural="$1"
 resource_name_singular="$2"
 
@@ -56,6 +59,6 @@ done
 json+=$'\n'"    ]"$'\n'"}"
 
 # Guardar el JSON en un archivo
-echo "$json" > cookiecutter.json
+echo "$json" > "$SCRIPT_DIR/cookiecutter.json"
 
 echo "Proceso completado. JSON guardado en archivo.json."
