@@ -19,7 +19,7 @@ if grep -q "$new_msURL" "$archivo_js"; then
   exit 1
 fi
 
-# Agregar la línea debajo del comentario "//routes"
-awk '/\/\/ add more microservices here/ {print; print "'"$new_msURL"'"; next} 1' "$archivo_js" > "$archivo_js.tmp" && mv "$archivo_js.tmp" "$archivo_js"
+# Agregar la línea debajo del comentario
+awk '/\/\/ SCRIPT: automatic generated ms url will be placed here/ {print; print "'"$new_msURL"'"; next} 1' "$archivo_js" > "$archivo_js.tmp" && mv "$archivo_js.tmp" "$archivo_js"
 
 echo "Nuevo item agregado al SideNav."

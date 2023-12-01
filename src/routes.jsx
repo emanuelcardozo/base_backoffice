@@ -3,7 +3,7 @@ import { useRoutes } from 'react-router-dom'
 import MainLayout from 'layouts/MainLayout'
 import AuthLayout from 'layouts/AuthLayout'
 
-// routes
+// SCRIPT: automatic imported routes will be placed here
 import CategoriesRoutes from 'features/categories/routes'
 import ErrorRoutes from 'features/Errors/routes'
 
@@ -19,7 +19,7 @@ const MainRoutes = {
     </AuthPreLoaders>
   ),
   children: [
-    // add yours features route here
+    // SCRIPT: automatic generated routes will be placed here
     ...CategoriesRoutes,
   ],
 }

@@ -57,6 +57,7 @@ const {{cookiecutter.resource_name_singular}}Filters = ({ open, onCancel, onAppl
       onChange: handleChange,
       onClear: () => setFieldValue(name, initialFilters[name]),
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [handleChange, values]
   )
 
@@ -94,6 +95,15 @@ const {{cookiecutter.resource_name_singular}}Filters = ({ open, onCancel, onAppl
             }}
             multiple
             limitTags={2}
+          />
+        {% elif field.type == "object" %}
+          <Autocomplete
+            label={t('{{field.name}}')}
+            resourceName="{{field.name}}"
+            {...getFieldProps('{{field.name}}')}
+            onChange={(e, value) => {
+              setFieldValue('{{field.name}}', value)
+            }}
           />
         {% elif field.type == "bool" %}
           <FormControlLabel

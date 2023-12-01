@@ -15,7 +15,7 @@ export const itemsGroupAdminUser = [
 ]
 
 export const itemsGroupCommonUser = [
-  // automatic generated menu items
+  // SCRIPT: automatic generated menu items will be placed here
   {
     title: 'Categories',
     path: '/categories',

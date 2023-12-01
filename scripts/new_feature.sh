@@ -41,4 +41,6 @@ cookiecutter . --no-input --output-dir ../src/features
 echo "Formateando todo el proyecto."
 npm run lint:fix
 
+rm cookiecutter.json
+
 echo "Proceso completado exitosamente."

@@ -67,6 +67,7 @@ function {{cookiecutter.resource_name_singular}}Form({ onCancel, onSubmit, initi
       onChange: handleChange,
       onClear: () => setFieldValue(name, EMPTY_{{cookiecutter.resource_name_singular|upper}}[name]),
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [touched, errors, handleBlur, handleChange, values, i18n]
   )
 
@@ -114,6 +115,15 @@ function {{cookiecutter.resource_name_singular}}Form({ onCancel, onSubmit, initi
                 }}
                 multiple
                 limitTags={2}
+              />
+            {% elif field.type == "object" %}
+              <Autocomplete
+                label={t('{{field.name}}')}
+                resourceName="{{field.name}}"
+                {...getFieldProps('{{field.name}}')}
+                onChange={(e, value) => {
+                  setFieldValue('{{field.name}}', value)
+                }}
               />
             {% elif field.type == "bool" %}
               <FormControlLabel

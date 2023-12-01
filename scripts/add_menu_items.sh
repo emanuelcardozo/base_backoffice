@@ -24,7 +24,7 @@ if grep -q "$new_item" "$archivo_js"; then
   exit 1
 fi
 
-# Agregar la línea debajo del comentario "//routes"
-awk '/\/\/ automatic generated menu items/ {print; print "'"$new_item"'"; next} 1' "$archivo_js" > "$archivo_js.tmp" && mv "$archivo_js.tmp" "$archivo_js"
+# Agregar la línea debajo del comentario
+awk '/\/\/ SCRIPT: automatic generated menu items will be placed here/ {print; print "'"$new_item"'"; next} 1' "$archivo_js" > "$archivo_js.tmp" && mv "$archivo_js.tmp" "$archivo_js"
 
 echo "Nuevo item agregado al SideNav."

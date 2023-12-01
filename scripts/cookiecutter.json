@@ -1,9 +1,0 @@
-{
-    "resource_name_plural": "Categories",
-    "resource_name_singular": "Category",
-    "__fields": [
-        {"name":"id","type":"number"},
-        {"name":"name","type":"string"},
-        {"name":"active","type":"bool"}
-    ]
-}
