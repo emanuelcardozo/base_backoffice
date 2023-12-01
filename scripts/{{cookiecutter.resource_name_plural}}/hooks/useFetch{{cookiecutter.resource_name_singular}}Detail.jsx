@@ -4,9 +4,9 @@ import { useSnackbar } from 'notistack'
 import useFetch from 'hooks/useFetch'
 import config from 'config'
 import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
-import { {{cookiecutter.resource_name_singular|lower}}FromAPI } from '../transformers'
+import { {{cookiecutter.resource_name_singular|lower}}FromAPI, {{cookiecutter.resource_name_singular|lower}}FromModel } from '../transformers'
 
-export default function useFetch{{cookiecutter.resource_name_singular}}Detail(id) {
+export default function useFetch{{cookiecutter.resource_name_singular}}Detail(id, transformer = {{cookiecutter.resource_name_singular|lower}}FromModel) {
   const [{{cookiecutter.resource_name_singular|lower}}, set{{cookiecutter.resource_name_singular}}] = useState()
   const { t } = useTranslation('common')
   const { response, doFetch, loading, error } = useFetch(
@@ -22,7 +22,7 @@ export default function useFetch{{cookiecutter.resource_name_singular}}Detail(id
   useEffect(() => {
     if (!response) return
 
-    set{{cookiecutter.resource_name_singular}}({{cookiecutter.resource_name_singular|lower}}FromAPI(response.data, t))
+    set{{cookiecutter.resource_name_singular}}(transformer({{cookiecutter.resource_name_singular|lower}}FromAPI(response.data), t))
   }, [response, t])
 
   useEffect(() => {

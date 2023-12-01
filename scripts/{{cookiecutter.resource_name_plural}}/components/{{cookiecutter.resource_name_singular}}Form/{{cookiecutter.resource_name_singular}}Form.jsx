@@ -17,7 +17,7 @@ import TimePicker from 'components/TimePicker'
 {% if cookiecutter.__fields|selectattr("type", "equalto", "datetime")|list|length %}
 import DateTimePicker from 'components/DateTimePicker'
 {% endif %}
-{% if cookiecutter.__fields|selectattr("type", "equalto", "array")|list|length %}
+{% if cookiecutter.__fields|selectattr("type", "equalto", "array")|list|length or if cookiecutter.__fields|selectattr("type", "equalto", "object")|list|length %}
 import Autocomplete from 'components/Autocomplete'
 {% endif %}
 {% if cookiecutter.__fields|selectattr("type", "equalto", "bool")|list|length %}
@@ -119,7 +119,7 @@ function {{cookiecutter.resource_name_singular}}Form({ onCancel, onSubmit, initi
             {% elif field.type == "object" %}
               <Autocomplete
                 label={t('{{field.name}}')}
-                resourceName="{{field.name}}"
+                resourceName="{{field.name}}s"
                 {...getFieldProps('{{field.name}}')}
                 onChange={(e, value) => {
                   setFieldValue('{{field.name}}', value)

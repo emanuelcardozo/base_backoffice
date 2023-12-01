@@ -5,6 +5,7 @@ import useFetch from 'hooks/useFetch'
 import config from 'config'
 import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
 import { useNavigate } from 'react-router-dom'
+import { {{cookiecutter.resource_name_singular|lower}}ToAPI } from '../transfomers/index.js'
 
 export default function use{{cookiecutter.resource_name_singular}}Edition(id) {
   const { t } = useTranslation()
@@ -19,7 +20,7 @@ export default function use{{cookiecutter.resource_name_singular}}Edition(id) {
 
   const onSubmit = useCallback(
     (data) => {
-      doFetch({ data })
+      doFetch({ data: {{cookiecutter.resource_name_singular|lower}}ToAPI(data) })
     },
     [doFetch]
   )

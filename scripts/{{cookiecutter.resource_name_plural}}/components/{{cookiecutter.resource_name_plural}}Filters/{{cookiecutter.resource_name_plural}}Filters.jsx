@@ -16,7 +16,7 @@ import TimePicker from 'components/TimePicker'
 {% if cookiecutter.__fields|selectattr("type", "equalto", "datetime")|list|length %}
 import DateTimePicker from 'components/DateTimePicker'
 {% endif %}
-{% if cookiecutter.__fields|selectattr("type", "equalto", "array")|list|length %}
+{% if cookiecutter.__fields|selectattr("type", "equalto", "array")|list|length or if cookiecutter.__fields|selectattr("type", "equalto", "object")|list|length %}
 import Autocomplete from 'components/Autocomplete'
 {% endif %}
 {% if cookiecutter.__fields|selectattr("type", "equalto", "bool")|list|length %}
@@ -28,8 +28,6 @@ const EMPTY_{{cookiecutter.resource_name_singular|upper}}_FILTERS = {
   {% for field in cookiecutter.__fields %}
     {% if field.type == "string" %}
       {{field.name}}: '',
-    {% elif field.type == "object" %}
-      {{field.name}}: {},
     {% elif field.type == "array" %}
       {{field.name}}: [],
     {% else %}
@@ -99,7 +97,7 @@ const {{cookiecutter.resource_name_singular}}Filters = ({ open, onCancel, onAppl
         {% elif field.type == "object" %}
           <Autocomplete
             label={t('{{field.name}}')}
-            resourceName="{{field.name}}"
+            resourceName="{{field.name}}s"
             {...getFieldProps('{{field.name}}')}
             onChange={(e, value) => {
               setFieldValue('{{field.name}}', value)

@@ -4,6 +4,10 @@ const {{cookiecutter.resource_name_singular|lower}}FromAPI = (data) => {
   return {{cookiecutter.resource_name_singular}}.fromAPI(data)
 }
 
+const {{cookiecutter.resource_name_singular|lower}}FromModel = (data, t) => {
+  return data
+}
+
 const edition{{cookiecutter.resource_name_singular}}FromAPI = (data) => {
   return data
 }
@@ -25,5 +29,6 @@ export {
   edition{{cookiecutter.resource_name_singular}}FromAPI,
   {{cookiecutter.resource_name_singular|lower}}ToAPI,
   {{cookiecutter.resource_name_singular|lower}}FiltersToAPI,
-  {{cookiecutter.resource_name_singular|lower}}EditedToAPI
+  {{cookiecutter.resource_name_singular|lower}}EditedToAPI,
+  {{cookiecutter.resource_name_singular|lower}}FromModel,
 }

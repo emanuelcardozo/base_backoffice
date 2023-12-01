@@ -11,8 +11,8 @@ resource_name_capitalized="$(tr '[:lower:]' '[:upper:]' <<< ${resource_name:0:1}
 new_import_translation_resource="import es${resource_name_capitalized}JSON from 'features/${resource_name_capitalized}/locale/es.json'\n\
 import en${resource_name_capitalized}JSON from 'features/${resource_name_capitalized}/locale/en.json'"
 
-new_english_translation_resource="${resource_name_capitalized}: es${resource_name_capitalized}JSON,"
-new_spanish_translation_resource="${resource_name_capitalized}: en${resource_name_capitalized}JSON,"
+new_english_translation_resource="${resource_name_capitalized}: en${resource_name_capitalized}JSON,"
+new_spanish_translation_resource="${resource_name_capitalized}: es${resource_name_capitalized}JSON,"
 
 # Verificar si el recurso ya está presente en el archivo
 if grep -q "$new_english_translation_resource" "$archivo_js"; then
