@@ -22,7 +22,7 @@
     }
   },
   "edit": {
-    "title": "Editar Categoría",
+    "title": "Editar {{cookiecutter.resource_name_singular|capitalize}}",
     "cancelDialog": {
       "title": "Cancelar edición de {{cookiecutter.resource_name_singular|lower}}",
       "content": "Estás seguro que deseas cancelar la edición? Todo el progreso se perderá",

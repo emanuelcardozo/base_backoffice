@@ -9,9 +9,6 @@ const config = {
       baseUrl: import.meta.env.VITE_MS_AUTH_API_URL,
     },
     // SCRIPT: automatic generated ms url will be placed here
-    msCategories: {
-      baseUrl: import.meta.env.VITE_MS_CATEGORIES_API_URL,
-    },
   },
 }
 

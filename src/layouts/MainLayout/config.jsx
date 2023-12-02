@@ -16,13 +16,4 @@ export const itemsGroupAdminUser = [
 
 export const itemsGroupCommonUser = [
   // SCRIPT: automatic generated menu items will be placed here
-  {
-    title: 'categories',
-    path: '/categories',
-    icon: (
-      <SvgIcon fontSize="small">
-        <TagIcon />
-      </SvgIcon>
-    ),
-  },
 ]

@@ -4,7 +4,6 @@ import MainLayout from 'layouts/MainLayout'
 import AuthLayout from 'layouts/AuthLayout'
 
 // SCRIPT: automatic imported routes will be placed here
-import CategoriesRoutes from 'features/categories/routes'
 import ErrorRoutes from 'features/Errors/routes'
 
 import AuthRoutes from './features/Auth/routes'
@@ -20,7 +19,6 @@ const MainRoutes = {
   ),
   children: [
     // SCRIPT: automatic generated routes will be placed here
-    ...CategoriesRoutes,
   ],
 }
 
