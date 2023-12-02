@@ -43,13 +43,7 @@
   "menu": {
     "operations": "Operations",
     "dashboard": "Dashboard",
-    "customers": "Customers",
-    "transactions": "Transactions",
-    "discounts": "Discounts",
-    "publications": "Publications",
-    "stores": "Stores",
     "system": "System",
-    "categories": "Categories",
     "admin": "Admin"
   },
   "errors": {

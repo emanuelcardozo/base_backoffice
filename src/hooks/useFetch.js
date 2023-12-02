@@ -60,6 +60,7 @@ const useFetch = (url, config = {}, debounceWait = 100) => {
         return Promise.reject(err?.response?.data?.error?.message)
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [url, JSON.stringify(config)]
   )
 
@@ -67,7 +68,7 @@ const useFetch = (url, config = {}, debounceWait = 100) => {
     async (params = {}) => {
       debounce(doFetch ? doFetch(params) : null, debounceWait)
     },
-    [doFetch]
+    [doFetch, debounceWait]
   )
   const retry = useCallback(
     (options = {}) => {

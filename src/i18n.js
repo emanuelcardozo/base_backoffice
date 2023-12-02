@@ -3,9 +3,8 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 import enJSON from './locale/en.json'
 import esJSON from './locale/es.json'
-// Features
-import esCategoriesJSON from 'features/Categories/locale/es.json'
-import enCategoriesJSON from 'features/Categories/locale/en.json'
+
+// SCRIPT: automatic imported translations will be placed here
 
 i18n
   .use(LanguageDetector)
@@ -30,12 +29,13 @@ i18n.services.formatter.add('lowercase', (value) => {
   return value.toLowerCase()
 })
 
-i18n.addResourceBundle('en', 'features', {
-  Categories: enCategoriesJSON,
+// add more resources here
+i18n.addResourceBundle('es', 'features', {
+  // SCRIPT: automatic generated english translations will be placed here
 })
 
-i18n.addResourceBundle('es', 'features', {
-  Categories: esCategoriesJSON,
+i18n.addResourceBundle('en', 'features', {
+  // SCRIPT: automatic generated spanish translations will be placed here
 })
 
 export default i18n
