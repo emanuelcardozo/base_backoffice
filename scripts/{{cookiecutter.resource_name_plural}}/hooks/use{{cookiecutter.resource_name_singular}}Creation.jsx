@@ -34,10 +34,7 @@ export default function use{{cookiecutter.resource_name_singular}}Creation() {
       type: t('features:{{cookiecutter.resource_name_plural}}:singular'),
     })
 
-    enqueueSnackbar(message, {
-      preventDuplicate: false,
-      variant: 'success',
-    })
+    enqueueSnackbar(message)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [response, t])
 
@@ -45,17 +42,13 @@ export default function use{{cookiecutter.resource_name_singular}}Creation() {
     if (!error) return
 
     enqueueSnackbar(error.message, {
-      preventDuplicate: true,
-      variant: 'error',
-      autoHideDuration: 2000,
-      maxSnack: 1,
+      ...config.snackbarError,
       action: (
         <RetryButtonSnackbar
           onClick={() => {
-            doFetch()
             closeSnackbar()
           }}
-          label={t('retry')}
+          label={t('close')}
         />
       ),
     })

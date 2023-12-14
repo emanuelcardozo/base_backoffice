@@ -4,12 +4,19 @@ const {{cookiecutter.resource_name_singular|lower}}FromAPI = (data) => {
   return {{cookiecutter.resource_name_singular}}.fromAPI(data)
 }
 
-const {{cookiecutter.resource_name_singular|lower}}FromModel = (data, t) => {
+const {{cookiecutter.resource_name_singular|lower}}FromModel = (data) => {
   return data
 }
 
 const edition{{cookiecutter.resource_name_singular}}FromAPI = (data) => {
-  return data
+  return {
+    ...data,
+    {% for field in cookiecutter.__fields %}
+      {% if field.type == "date" or field.type == "datetime" or field.type == "time"  %}
+        {{field.name}}: new Date(data.{{field.name}}),
+      {% endif %}
+    {% endfor %}
+  }
 }
 
 const {{cookiecutter.resource_name_singular|lower}}ToAPI = (data) => {

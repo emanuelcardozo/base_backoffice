@@ -15,7 +15,7 @@ if grep -q "import ${resource_name_capitalized}Routes" "$archivo_js"; then
 fi
 
 # Texto a agregar
-new_lines="import ${resource_name_capitalized}Routes from 'features/${resource_name}/routes'"
+new_lines="import ${resource_name_capitalized}Routes from 'features/${resource_name_capitalized}/routes'"
 
 # Agregar la línea debajo del comentario
 awk '/\/\/ SCRIPT: automatic imported routes will be placed here/ {print; print "'"$new_lines"'"; next} 1' "$archivo_js" > "$archivo_js.tmp" && mv "$archivo_js.tmp" "$archivo_js"

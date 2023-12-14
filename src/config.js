@@ -1,6 +1,14 @@
 const config = {
   snackbar: {
     maxSnack: 5,
+    autoHideDuration: 5000,
+    preventDuplicate: false,
+    variant: 'success',
+  },
+  snackbarError: {
+    preventDuplicate: true,
+    variant: 'error',
+    maxSnack: 1,
   },
   api: {
     platform: 'Backoffice',

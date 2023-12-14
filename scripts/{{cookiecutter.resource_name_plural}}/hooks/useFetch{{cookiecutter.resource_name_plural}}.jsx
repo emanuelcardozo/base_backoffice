@@ -10,7 +10,7 @@ export default function useFetch{{cookiecutter.resource_name_plural}}(filters) {
   const { t } = useTranslation()
   const { closeSnackbar, enqueueSnackbar } = useSnackbar()
   const [{{cookiecutter.resource_name_plural|lower}}, set{{cookiecutter.resource_name_plural}}] = useState(null)
-  const { doFetch, response, paginator, loading, error, retry } = usePaginatedFetch({
+  const { response, paginator, loading, error, retry } = usePaginatedFetch({
     url: `${config.api.ms{{cookiecutter.resource_name_plural}}.baseUrl}/{{cookiecutter.resource_name_plural|lower}}`,
     filters,
   })
@@ -27,17 +27,13 @@ export default function useFetch{{cookiecutter.resource_name_plural}}(filters) {
     if (!error) return
 
     enqueueSnackbar(error.message, {
-      preventDuplicate: true,
-      variant: 'error',
-      autoHideDuration: 2000,
-      maxSnack: 1,
+      ...config.snackbarError,
       action: (
         <RetryButtonSnackbar
           onClick={() => {
-            doFetch()
             closeSnackbar()
           }}
-          label={t('retry')}
+          label={t('close')}
         />
       ),
     })

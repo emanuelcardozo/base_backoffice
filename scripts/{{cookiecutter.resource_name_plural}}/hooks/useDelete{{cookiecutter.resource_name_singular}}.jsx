@@ -20,10 +20,7 @@ export default function useDelete{{cookiecutter.resource_name_singular}}() {
   useEffect(() => {
     if (!response) return
 
-    enqueueSnackbar('Deleted Succesfully', {
-      preventDuplicate: false,
-      variant: 'success',
-    })
+    enqueueSnackbar(t('deletedSuccessfully'))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [response, t])
 
@@ -31,17 +28,13 @@ export default function useDelete{{cookiecutter.resource_name_singular}}() {
     if (!error) return
 
     enqueueSnackbar(error.message, {
-      preventDuplicate: true,
-      variant: 'error',
-      autoHideDuration: 2000,
-      maxSnack: 1,
+      ...config.snackbarError,
       action: (
         <RetryButtonSnackbar
           onClick={() => {
-            doFetch()
             closeSnackbar()
           }}
-          label={t('retry')}
+          label={t('close')}
         />
       ),
     })

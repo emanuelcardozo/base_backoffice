@@ -1,11 +1,13 @@
 import { useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSnackbar } from 'notistack'
-import useFetch from 'hooks/useFetch'
-import config from 'config'
-import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
 import { useNavigate } from 'react-router-dom'
-import { {{cookiecutter.resource_name_singular|lower}}ToAPI } from '../transfomers/index.js'
+import useFetch from 'hooks/useFetch'
+
+import config from 'config'
+
+import RetryButtonSnackbar from 'components/RetryButtonSnackbar'
+import { {{cookiecutter.resource_name_singular|lower}}ToAPI } from '../transformers/index.js'
 
 export default function use{{cookiecutter.resource_name_singular}}Edition(id) {
   const { t } = useTranslation()
@@ -35,10 +37,7 @@ export default function use{{cookiecutter.resource_name_singular}}Edition(id) {
       type: t('features:{{cookiecutter.resource_name_plural}}:singular'),
     })
 
-    enqueueSnackbar(message, {
-      preventDuplicate: false,
-      variant: 'success',
-    })
+    enqueueSnackbar(message)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [response, t])
 
@@ -46,17 +45,13 @@ export default function use{{cookiecutter.resource_name_singular}}Edition(id) {
     if (!error) return
 
     enqueueSnackbar(error.message, {
-      preventDuplicate: true,
-      variant: 'error',
-      autoHideDuration: 2000,
-      maxSnack: 1,
+      ...config.snackbarError,
       action: (
         <RetryButtonSnackbar
           onClick={() => {
-            doFetch()
             closeSnackbar()
           }}
-          label={t('retry')}
+          label={t('close')}
         />
       ),
     })

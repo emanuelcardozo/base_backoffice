@@ -4,7 +4,7 @@
     "title": "{{cookiecutter.resource_name_plural|capitalize}}"
   },
   "details": {
-    "details": "Detalles"
+    "title": "Detalles de {{cookiecutter.resource_name_plural|capitalize}}"
   },
   "fields": {
     {% for field in cookiecutter.__fields %}

@@ -30,8 +30,6 @@ const EMPTY_{{cookiecutter.resource_name_singular|upper}} = {
   {% for field in cookiecutter.__fields %}
     {% if field.type == "string" %}
       {{field.name}}: '',
-    {% elif field.type == "object" %}
-      {{field.name}}: {},
     {% elif field.type == "array" %}
       {{field.name}}: [],
     {% else %}
@@ -119,7 +117,7 @@ function {{cookiecutter.resource_name_singular}}Form({ onCancel, onSubmit, initi
             {% elif field.type == "object" %}
               <Autocomplete
                 label={t('{{field.name}}')}
-                resourceName="{{field.name}}s"
+                resourceName="{{field.name}}"
                 {...getFieldProps('{{field.name}}')}
                 onChange={(e, value) => {
                   setFieldValue('{{field.name}}', value)

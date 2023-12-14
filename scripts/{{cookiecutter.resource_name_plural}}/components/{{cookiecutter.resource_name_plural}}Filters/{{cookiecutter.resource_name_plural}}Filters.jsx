@@ -97,7 +97,7 @@ const {{cookiecutter.resource_name_singular}}Filters = ({ open, onCancel, onAppl
         {% elif field.type == "object" %}
           <Autocomplete
             label={t('{{field.name}}')}
-            resourceName="{{field.name}}s"
+            resourceName="{{field.name}}"
             {...getFieldProps('{{field.name}}')}
             onChange={(e, value) => {
               setFieldValue('{{field.name}}', value)
